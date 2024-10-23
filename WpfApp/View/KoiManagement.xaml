@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="WpfApp.View.KoiManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.View"
+        mc:Ignorable="d"
+        Height="500" Width="1200">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Fish/Koi DataGrid -->
+        <DataGrid x:Name="FishDataGrid" Grid.Row="0" ItemsSource="{Binding FishList}"
+                  AutoGenerateColumns="False" IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
+                <DataGridTextColumn Header="KoiName" Binding="{Binding Name}" Width="100" />
+                <DataGridTextColumn Header="Image" Binding="{Binding Image}" Width="200" />
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="70" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="100" />
+                <DataGridTextColumn Header="Origin" Binding="{Binding Origin}" Width="70" />
+                <DataGridTextColumn Header="Health Status" Binding="{Binding HealthStatus}" Width="100" />
+                <DataGridTextColumn Header="Award Certificate" Binding="{Binding Certificate}" Width="100" />
+                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Width="100" />
+                <DataGridTextColumn Header="Length" Binding="{Binding Length}" Width="100" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100" />
+                <DataGridTextColumn Header="CategoryId" Binding="{Binding CategoryId}" Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Form for adding or editing fish -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+            <Button Content="Add Koi" Width="100" Margin="5" Click="btnCreateKoi"/>
+            <Button Content="Update Koi" Width="100" Margin="5" Click="btnUpdateKoi"/>
+            <Button Content="Delete Koi" Width="100" Margin="5" Click="btnDeleteKoi"/>
+            <Button Content="Back to Dashboard" Width="130" Margin="5" Padding="5"  Click="btnClose"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="5,394,5,0" Height="38" VerticalAlignment="Top">
+            <TextBox x:Name="KoiId" Width="40" Margin="5" />
+            <TextBox x:Name="KoiName" Width="100" Margin="5"/>
+            <TextBox x:Name="Image" Width="180" Margin="5" />
+            <TextBox x:Name="Quantity" Width="70" Margin="5"/>
+            <TextBox x:Name="Price" Width="100" Margin="5"/>
+            <TextBox x:Name="Origin" Width="70" Margin="5"/>
+            <TextBox x:Name="HealthStatus" Width="100" Margin="5"/>
+            <TextBox x:Name="Certificate" Width="100" Margin="5"/>
+            <TextBox x:Name="Weight" Width="100" Margin="5"/>
+            <TextBox x:Name="Length" Width="100" Margin="5"/>
+            <TextBox x:Name="Status" Width="100" Margin="5"/>
+            <TextBox x:Name="CategoryId" Width="100" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
