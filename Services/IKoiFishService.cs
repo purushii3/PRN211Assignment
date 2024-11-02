@@ -14,5 +14,8 @@ namespace Services
         void DeleteKoiFish(KoiFish koiFish);
         void UpdateKoiFish(KoiFish koiFish);
         void SaveKoi(KoiFish koiFish);
+        List<KoiFish> SortedDesc();
+        List<KoiFish> SortedAsc();
+        List<KoiFish> FindByCategory(int categoryId);
     }
 }
