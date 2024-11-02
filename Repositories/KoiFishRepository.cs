@@ -15,5 +15,8 @@ namespace Repositories
         public KoiFish GetKoiFishById(int id) => KoiFishDAO.GetKoiFishById(id);
         public void SaveKoi(KoiFish koiFish) => KoiFishDAO.SaveKoi(koiFish);
         public void UpdateKoiFish(KoiFish koiFish) => KoiFishDAO.UpdateKoiFish(koiFish);
+        public List<KoiFish> SortedDesc() =>KoiFishDAO.SortedDesc();
+        public List<KoiFish> SortedAsc() =>KoiFishDAO.SortedAsc();
+        public List<KoiFish> FindByCategory(int CategoryId) => KoiFishDAO.FindByCategory(CategoryId);
     }
 }

@@ -16,18 +16,18 @@ namespace DataAccessLayer
             try
             {
                 using var context = new KoiFishContext();
-                koiList = context.KoiFishes.ToList();
+                koiList = context.KoiFishes.Where(k => k.Status == true).ToList();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
             return koiList;
-        } 
+        }
         //create koi
         public static void SaveKoi(KoiFish koiFish)
         {
-            if(koiFish == null)
+            if (koiFish == null)
             {
                 throw new ArgumentNullException(nameof(koiFish), "Koi can't be null!");
             }
@@ -37,7 +37,7 @@ namespace DataAccessLayer
                 context.KoiFishes.Add(koiFish);
                 context.SaveChanges();
             }
-           catch (Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -52,7 +52,7 @@ namespace DataAccessLayer
                 context.SaveChanges();
             }
             catch (Exception ex)
-            { 
+            {
                 throw new Exception(ex.Message);
             }
         }
@@ -64,20 +64,57 @@ namespace DataAccessLayer
             {
                 using var context = new KoiFishContext();
                 var koi = context.KoiFishes.SingleOrDefault(k => k.KoiFishId == koiFish.KoiFishId);
-                context.KoiFishes.Remove(koi);
+                if (koi != null)
+                    koi.Status = false;
                 context.SaveChanges();
             }
-            catch (Exception ex) 
-            { 
-                throw new Exception(ex.Message); 
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
         //Get koi by id
         public static KoiFish GetKoiFishById(int id)
         {
-            using var context = new KoiFishContext();
-            return context.KoiFishes.FirstOrDefault(k => k.KoiFishId.Equals(id));
-        }
+            try
+            {
+                using var context = new KoiFishContext();
+                return context.KoiFishes.FirstOrDefault(k => k.KoiFishId.Equals(id));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Koi does not exist!!"+ ex.Message);
+            }
 
+        }
+        //sort by price Desc
+        public static List<KoiFish> SortedDesc()
+        {
+            using var context = new KoiFishContext();
+
+            var sortedKoiList = context.KoiFishes.Where(k => k.Status == true).OrderByDescending(k => k.KoiFishPrice).ToList();
+            return sortedKoiList;
+        }
+        //sort by price Asc
+        public  static List<KoiFish> SortedAsc()
+        {
+            using var context = new KoiFishContext();
+            var sortedKoiList = context.KoiFishes.Where(k => k.Status == true).OrderBy(k =>  k.KoiFishPrice).ToList();
+            return sortedKoiList;
+        }
+        //find by Category
+        public static List<KoiFish> FindByCategory(int CategoryId)
+        {
+            try
+            {
+                using var context = new KoiFishContext();
+                var koiList = context.KoiFishes.Where(k => k.CategoryId == CategoryId).ToList();
+                return koiList;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Invalid Koi" +ex.Message);
+            }
+        }
     }
 }

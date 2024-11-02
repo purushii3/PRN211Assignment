@@ -40,5 +40,18 @@ namespace Services
         {
             iKoiFishRepository.UpdateKoiFish(koiFish);
         }
+        public List<KoiFish> SortedDesc()
+        {
+            return iKoiFishRepository.SortedDesc();
+        }
+        public List<KoiFish> SortedAsc()
+        {
+            return iKoiFishRepository.SortedAsc();
+        }
+
+        public List<KoiFish> FindByCategory(int categoryId)
+        {
+            return iKoiFishRepository.FindByCategory(categoryId);
+        }
     }
 }

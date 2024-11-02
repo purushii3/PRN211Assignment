@@ -1,12 +1,14 @@
-﻿using System;
+﻿using BusinessObjects.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories
 {
-    internal interface IOrderRepository
+    public interface IOrderRepository
     {
+        List<Order> GetAllOrders();
+        Order GetOrderById(string id);
+        void CreateOrder(Order order, List<OrderDetail> orderDetails);
+        void UpdateOrder(Order order);
+        void DeleteOrder(string id);
     }
 }
