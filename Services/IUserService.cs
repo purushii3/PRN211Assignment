@@ -9,6 +9,11 @@ namespace Services
 {
     public interface IUserService
     {
+        List<User> GetAll();
+        User GetUserById(int id);
         User GetUserByUserName(string userName);
+        void SaveUser(User user);
+        void DeleteCustomer(User user);
+        void UpdateCustomer(User user);
     }
 }

@@ -10,9 +10,35 @@ namespace Services
         {
             _userRepository = new UserRepository();
         }
+
+        public void DeleteCustomer(User user)
+        {
+            _userRepository.DeleteCustomer(user);
+        }
+
+        public List<User> GetAll()
+        {
+            return _userRepository.GetAll();
+        }
+
+        public User GetUserById(int id)
+        {
+            return _userRepository.GetUserById(id);
+        }
+
         public User GetUserByUserName(string userName)
         {
             return _userRepository.GetUserByUserName(userName);
+        }
+
+        public void SaveUser(User user)
+        {
+            _userRepository.SaveUser(user);
+        }
+
+        public void UpdateCustomer(User user)
+        {
+            _userRepository.UpdateCustomer(user);
         }
     }
 }
