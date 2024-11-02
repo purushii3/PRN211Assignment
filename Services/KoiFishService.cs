@@ -18,6 +18,10 @@ namespace Services
 
         public void DeleteKoiFish(KoiFish koiFish)
         {
+            if (koiFish == null)
+            {
+                throw new ArgumentNullException(nameof(koiFish), "Koi can't be null!");
+            }
             iKoiFishRepository.DeleteKoiFish(koiFish);
         }
 
@@ -33,11 +37,19 @@ namespace Services
 
         public void SaveKoi(KoiFish koiFish)
         {
+            if (koiFish == null)
+            {
+                throw new ArgumentNullException(nameof(koiFish), "Koi can't be null!");
+            }
             iKoiFishRepository.SaveKoi(koiFish);
         }
 
         public void UpdateKoiFish(KoiFish koiFish)
         {
+            if (koiFish == null)
+            {
+                throw new ArgumentNullException(nameof(koiFish), "Koi can't be null!");
+            }
             iKoiFishRepository.UpdateKoiFish(koiFish);
         }
         public List<KoiFish> SortedDesc()

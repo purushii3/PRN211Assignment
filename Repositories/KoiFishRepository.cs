@@ -10,13 +10,36 @@ namespace Repositories
 {
     public class KoiFishRepository : IKoiFishRepository
     {
-        public void DeleteKoiFish(KoiFish koiFish) => KoiFishDAO.DeleteKoiFish(koiFish);
+        public void DeleteKoiFish(KoiFish koiFish)
+        {
+            if (koiFish == null)
+            {
+                throw new ArgumentNullException(nameof(koiFish),"Koi can't be null!");
+            }
+            KoiFishDAO.DeleteKoiFish(koiFish);
+        }
         public List<KoiFish> GetAllKoi() => KoiFishDAO.GetAllKoi();
         public KoiFish GetKoiFishById(int id) => KoiFishDAO.GetKoiFishById(id);
-        public void SaveKoi(KoiFish koiFish) => KoiFishDAO.SaveKoi(koiFish);
-        public void UpdateKoiFish(KoiFish koiFish) => KoiFishDAO.UpdateKoiFish(koiFish);
+        public void SaveKoi(KoiFish koiFish)
+        {
+            if (koiFish == null)
+            {
+                throw new ArgumentNullException(nameof(koiFish), "Koi can't be null!");
+            }
+            KoiFishDAO.SaveKoi(koiFish);
+        }
+        public void UpdateKoiFish(KoiFish koiFish)
+        {
+            if (koiFish == null)
+            {
+                throw new ArgumentNullException(nameof(koiFish),"Koi can't be null!");
+            }
+            KoiFishDAO.UpdateKoiFish(koiFish);
+        }
+
         public List<KoiFish> SortedDesc() =>KoiFishDAO.SortedDesc();
         public List<KoiFish> SortedAsc() =>KoiFishDAO.SortedAsc();
         public List<KoiFish> FindByCategory(int CategoryId) => KoiFishDAO.FindByCategory(CategoryId);
+        
     }
 }
