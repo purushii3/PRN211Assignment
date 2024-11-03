@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer
 {
@@ -16,7 +17,10 @@ namespace DataAccessLayer
             try
             {
                 using var context = new KoiFishContext();
-                koiList = context.KoiFishes.Where(k => k.Status == true).ToList();
+                koiList = context.KoiFishes
+                .Include(k => k.Category)
+                .Where(k => k.Status == true)
+                .ToList();
             }
             catch (Exception ex)
             {

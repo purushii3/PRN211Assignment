@@ -29,7 +29,7 @@
                 <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Width="100" />
                 <DataGridTextColumn Header="Length" Binding="{Binding Length}" Width="100" />
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100" />
-                <DataGridTextColumn Header="Category" Binding="{Binding CategoryId}" Width="100" />
+                <DataGridTextColumn Header="Category" Binding="{Binding Category.CategoryName}" Width="100" />
             </DataGrid.Columns>
         </DataGrid>
 

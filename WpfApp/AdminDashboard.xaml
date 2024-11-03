@@ -17,6 +17,7 @@
                  Grid.Column="0" Margin="10">
             <ListBoxItem Content="Koi Management" />
             <ListBoxItem Content="User Management" />
+            <ListBoxItem Content="Order Management" />
         </ListBox>
 
         <!-- Right side: Display area for selected table -->

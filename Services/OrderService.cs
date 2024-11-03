@@ -9,9 +9,9 @@ namespace Services
     {
         private readonly IOrderRepository _orderRepository;
 
-        public OrderService(IOrderRepository orderRepository)
+        public OrderService()
         {
-            _orderRepository = orderRepository;
+            _orderRepository = new OrderRepository();
         }
 
         // Lấy tất cả đơn hàng

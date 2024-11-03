@@ -46,6 +46,9 @@ namespace WpfApp
                     case "User Management":
                         ContentArea.Content = new View.UserManagement();
                         break;
+                    case "Order Management":
+                        ContentArea.Content = new View.OrderManagement();
+                        break;
                 }
             }
         }
