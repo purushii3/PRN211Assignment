@@ -1,10 +1,17 @@
 ﻿using BusinessObjects.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer
 {
     public class UserDAO
     {
         private static readonly KoiFishContext _db;
+
+        static UserDAO()
+        {
+            _db = new KoiFishContext();
+        }
+        
         public static List<User> GetAll()
         {
             var listUser = new List<User>();
@@ -47,12 +54,16 @@ namespace DataAccessLayer
         {
             try
             {
-                var u = _db.Users.SingleOrDefault(x => x.UserId == user.UserId);
-                if (u != null)
-                {
-                    u.Status = false;
-                    _db.SaveChanges();
-                }
+                var u = 
+                    _db.Users.SingleOrDefault(x => x.UserId == user.UserId);
+                // if (u != null)
+                // {
+                //     u.Status = false;
+                //     _db.SaveChanges();
+                // }
+
+                _db.Users.Remove(u);
+                _db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -63,8 +74,19 @@ namespace DataAccessLayer
         {
             try
             {
-                _db.Entry<User>(user).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                // _db.Entry<User>(user).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                // _db.SaveChanges();
+                
+                var existingUser = _db.Users.Local.FirstOrDefault(u => u.UserId == user.UserId);
+                if (existingUser != null)
+                {
+                    _db.Entry(existingUser).State = EntityState.Detached;
+                }
+
+                _db.Users.Attach(user);
+                _db.Entry(user).State = EntityState.Modified;
                 _db.SaveChanges();
+
 
             }
             catch (Exception ex)

@@ -43,8 +43,8 @@ namespace WpfApp
                 if (user.RoleId.Equals("AD"))
                 {
                     this.Hide();
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
+                    AdminDashboard admin = new AdminDashboard(user.UserName);
+                    admin.Show();
                 }
                 else if (user.RoleId.Equals("US"))
                 {

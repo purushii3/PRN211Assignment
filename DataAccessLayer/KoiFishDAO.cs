@@ -79,7 +79,7 @@ namespace DataAccessLayer
             try
             {
                 using var context = new KoiFishContext();
-                return context.KoiFishes.FirstOrDefault(k => k.KoiFishId.Equals(id));
+                return context.KoiFishes.FirstOrDefault(k => k.KoiFishId == id);
             }
             catch (Exception ex)
             {

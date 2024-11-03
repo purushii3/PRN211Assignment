@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="WpfApp.View.UserManagement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:WpfApp.View"
+             mc:Ignorable="d"
+             Loaded="UserManagement_OnLoaded"
+             Height="450"
+        Width="910">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- User DataGrid -->
+        <DataGrid x:Name="dgData"
+                Grid.Row="0"
+                AutoGenerateColumns="False"
+                IsReadOnly="False"
+                SelectionChanged="UserDataGrid_OnSelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="userID" Binding="{Binding UserId}" Width="60" IsReadOnly="True"/>
+                <DataGridTextColumn Header="username" Binding="{Binding UserName}" Width="70" />
+                <DataGridTextColumn Header="fullName" Binding="{Binding FullName}" Width="150"/>
+                <DataGridTextColumn Header="password" Binding="{Binding Password}" Width="120"/>
+                <DataGridTextColumn Header="roleId" Binding="{Binding RoleId}" Width="50"/>
+                <DataGridTextColumn Header="birthDate" Binding="{Binding Birthday}" Width="100"/>
+                <DataGridTextColumn Header="address" Binding="{Binding Address}" Width="100"/>
+                <DataGridTextColumn Header="phone" Binding="{Binding Phone}" Width="120"/>
+                <DataGridTextColumn Header="status" Binding="{Binding Status}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Form for adding or editing users -->
+        <StackPanel Orientation="Horizontal"
+                Margin="5,344,5,0"
+                Height="38"
+                VerticalAlignment="Top">
+            <TextBox x:Name="txtUserId"
+                    Width="40"
+                    Margin="5"
+                    IsEnabled="False"/>
+            <TextBox x:Name="txtUserName" 
+                     Width="70"
+                     Margin="5"
+                     />
+            <TextBox x:Name="txtFullName"
+                    Width="140"
+                    Margin="5"/>
+            <TextBox x:Name="txtPassword"
+                    Width="100"
+                    Margin="5"/>
+            <TextBox x:Name="txtRoleId"
+                    Width="40"
+                    Margin="5"/>
+            <TextBox x:Name="txtBirthDate"
+                    Width="70"
+                    Margin="5"/>
+            <TextBox x:Name="txtAddress"
+                    Width="100"
+                    Margin="5"/>
+            <TextBox x:Name="txtPhone"
+                    Width="100"
+                    Margin="5"/>
+            <StackPanel Orientation="Horizontal" Margin="5" VerticalAlignment="Center">
+                    <RadioButton x:Name="rbStatusActive" Content="Active" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+                    <RadioButton x:Name="rbStatusInactive" Content="Inactive" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+            </StackPanel>
+
+        </StackPanel>
+        <!-- Add and Delete Buttons -->
+
+        <StackPanel Grid.Row="1"
+                Orientation="Horizontal"
+                Margin="0,5,10,5">
+
+            <Button Content="Create User"
+                    Width="100"
+                    Margin="5"
+                    Padding="5"
+                    Click="btnCreateUser"/>
+            <Button Content="Update User"
+                    Width="100"
+                    Margin="5"
+                    Padding="5"
+                    Click="btnUpdateUser"/>
+            <Button Content="Delete User"
+                    Width="100"
+                    Margin="5"
+                    Click="btnDeleteUser"
+                    />
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

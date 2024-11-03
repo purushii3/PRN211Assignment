@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    internal class KoiFishService : IKoiFishService
+    public class KoiFishService : IKoiFishService
     {
         private readonly IKoiFishRepository iKoiFishRepository;
         public KoiFishService()

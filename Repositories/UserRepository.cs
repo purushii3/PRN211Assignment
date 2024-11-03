@@ -5,10 +5,8 @@ namespace Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public void DeleteCustomer(User user)
-        {
-            throw new NotImplementedException();
-        }
+        // readonly dynamic _userDao = new UserDAO();
+        public void DeleteCustomer(User user) => UserDAO.DeleteCustomer(user);
 
         public List<User> GetAll() => UserDAO.GetAll();
         

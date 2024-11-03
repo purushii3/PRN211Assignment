@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="WpfApp.View.KoiManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.View"
+        mc:Ignorable="d"
+        Loaded="KoiManagement_OnLoaded"
+        Height="500" Width="1310">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Fish/Koi DataGrid -->
+        <DataGrid x:Name="dgData" Grid.Row="0" ItemsSource="{Binding koiList}"
+                  AutoGenerateColumns="False" IsReadOnly="False"
+                  SelectionChanged="DgData_OnSelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding KoiFishId}" Width="50" IsReadOnly="True" />
+                <DataGridTextColumn Header="KoiName" Binding="{Binding KoiFishName}" Width="100" />
+                <DataGridTextColumn Header="Image" Binding="{Binding KoiFishImage}" Width="200" />
+                <DataGridTextColumn Header="Quantity" Binding="{Binding KoiFishQuantity}" Width="70" />
+                <DataGridTextColumn Header="Price" Binding="{Binding KoiFishPrice}" Width="100" />
+                <DataGridTextColumn Header="Origin" Binding="{Binding Origin}" Width="70" />
+                <DataGridTextColumn Header="Health Status" Binding="{Binding HealthStatus}" Width="100" />
+                <DataGridTextColumn Header="Award Certificate" Binding="{Binding AwardCertificate}" Width="100" />
+                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Width="100" />
+                <DataGridTextColumn Header="Length" Binding="{Binding Length}" Width="100" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100" />
+                <DataGridTextColumn Header="Category" Binding="{Binding CategoryId}" Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Form for adding or editing fish -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5" >
+            <Button Content="Add Koi" Width="100" Margin="5" Click="btnCreateKoi"/>
+            <Button Content="Update Koi" Width="100" Margin="5" Click="btnUpdateKoi"/>
+            <Button Content="Delete Koi" Width="100" Margin="5" Padding="5" Click="btnDeleteKoi"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="5,394,5,0" Height="38" VerticalAlignment="Top">
+            <TextBox x:Name="KoiId" Width="40" Margin="5" IsEnabled="False"/>
+            <TextBox x:Name="KoiName" Width="100" Margin="5"/>
+            <TextBox x:Name="Image" Width="180" Margin="5" />
+            <TextBox x:Name="Quantity" Width="70" Margin="5"/>
+            <TextBox x:Name="Price" Width="100" Margin="5"/>
+            <TextBox x:Name="Origin" Width="70" Margin="5"/>
+            <TextBox x:Name="HealthStatus" Width="100" Margin="5"/>
+            <TextBox x:Name="Certificate" Width="100" Margin="5"/>
+            <TextBox x:Name="Weight" Width="100" Margin="5"/>
+            <TextBox x:Name="Length" Width="100" Margin="5"/>
+            <!-- <TextBox x:Name="Status" Width="100" Margin="5"/> -->
+            <StackPanel Orientation="Vertical" Margin="0 0 0 0" VerticalAlignment="Center">
+                <RadioButton x:Name="rbStatusActive" Content="Active" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+                <RadioButton x:Name="rbStatusInactive" Content="Inactive" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+            </StackPanel>
+            <!-- <TextBox x:Name="CategoryId" Width="100" Margin="5"/> -->
+            <ComboBox x:Name="cboCategory" Width="100" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

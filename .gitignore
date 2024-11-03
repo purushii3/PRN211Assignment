@@ -361,3 +361,11 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# appsetings
+WpfApp/appsettings.json
+
+# Nguyen
+WpfApp/MainWindow.xaml
+WpfApp/MainWindow.xaml.cs
+KoiFish.sln.DotSettings.user

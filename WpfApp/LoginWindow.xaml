@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Border.BorderBrush>
             <Border.Background>
-                <ImageBrush ImageSource="C:\Users\trant\OneDrive\Hình ảnh\Cuộn phim/logo.png"/>
+                <ImageBrush ImageSource="Resources/koifish.jpg"></ImageBrush>
             </Border.Background>
 
             <Grid>
