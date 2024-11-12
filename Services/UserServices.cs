@@ -36,6 +36,11 @@ namespace Services
             _userRepository.SaveUser(user);
         }
 
+        public List<User> SearchByName(string fullName)
+        {
+            return _userRepository.SearchByName(fullName);
+        }
+
         public void UpdateCustomer(User user)
         {
             _userRepository.UpdateCustomer(user);

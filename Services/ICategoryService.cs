@@ -8,4 +8,5 @@ public interface ICategoryService
     void CreateCategories(Category category);
     void UpdateCategories(Category category);
     void DeleteCategories(Category category);
+    Category GetCategoryById(int id);
 }

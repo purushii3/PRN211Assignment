@@ -164,5 +164,40 @@ namespace WpfApp.View
         {
             LoadUserList();
         }
+
+        private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtPlaceholder.Visibility = Visibility.Collapsed;
+        }
+
+        private void txtSearch_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearch.Text))
+            {
+                txtPlaceholder.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string fullName = txtSearch.Text.Trim();
+            if (!string.IsNullOrEmpty(fullName))
+            {
+                List<User> customers = _userService.SearchByName(fullName);
+                if (customers.Any())
+                {
+                    dgData.ItemsSource = customers;
+                }
+                else
+                {
+                    MessageBox.Show("No customers found!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter customer name to search.", "Notification", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
     }
 }

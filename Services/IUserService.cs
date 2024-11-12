@@ -15,5 +15,6 @@ namespace Services
         void SaveUser(User user);
         void DeleteCustomer(User user);
         void UpdateCustomer(User user);
+        List<User> SearchByName(string fullName);
     }
 }

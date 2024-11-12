@@ -65,8 +65,8 @@
                     Width="100"
                     Margin="5"/>
             <StackPanel Orientation="Horizontal" Margin="5" VerticalAlignment="Center">
-                    <RadioButton x:Name="rbStatusActive" Content="Active" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
-                    <RadioButton x:Name="rbStatusInactive" Content="Inactive" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+                <RadioButton x:Name="rbStatusActive" Content="Active" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+                <RadioButton x:Name="rbStatusInactive" Content="Inactive" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
             </StackPanel>
 
         </StackPanel>
@@ -154,7 +154,60 @@
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
+            <StackPanel Height="44" Width="238" Margin="20,0,0,0" Orientation="Horizontal">
+                <Button x:Name="btnSearch" Height="46" Width="46" 
+                        Background="Transparent" BorderBrush="Transparent"
+                        HorizontalAlignment="Left" Click="btnSearch_Click">
+                    <StackPanel Orientation="Horizontal" Height="39" Width="151" RenderTransformOrigin="0.13,0.472">
+                        <Image Source="/Images/search.png" Width="44" Height="40" Stretch="Uniform" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
 
+                <Grid Width="196" Height="46" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="txtSearch" 
+FontSize="20"
+FontWeight="Medium"
+FontFamily="Helvetica"                            
+Height="40"
+VerticalContentAlignment="Center"
+Width="180"
+Background="Transparent"
+BorderBrush="White"
+HorizontalAlignment="Center"
+GotFocus="txtSearch_GotFocus"
+LostFocus="txtSearch_LostFocus" Margin="0,3,0,3">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TextBox">
+                                            <Border Background="{TemplateBinding Background}" 
+                       BorderBrush="{TemplateBinding BorderBrush}" 
+                       BorderThickness="{TemplateBinding BorderThickness}" 
+                       CornerRadius="20">
+                                                <ScrollViewer x:Name="PART_ContentHost"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <TextBlock x:Name="txtPlaceholder" Text="Enter name"
+            Foreground="White"
+            FontSize="15"
+            FontWeight="Medium"
+            FontFamily="Helvetica"
+            VerticalAlignment="Center"
+            Margin="10,0,8,0"
+            IsHitTestVisible="False"/>
+
+                </Grid>
+            </StackPanel>
         </StackPanel>
 
     </Grid>

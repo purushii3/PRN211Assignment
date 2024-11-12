@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="ShopWindow" Height="450" Width="800">
     <Grid>
-        
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,27,20,27">
+            <WrapPanel x:Name="DataWrapPanel" Margin="0,0,0,0" Width="980">
+               
+            </WrapPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

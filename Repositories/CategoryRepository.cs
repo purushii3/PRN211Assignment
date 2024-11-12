@@ -11,4 +11,5 @@ public class CategoryRepository : ICategoryRepository
     public List<Category> GetCategories() => CategoryDAO.GetCategories();
 
     public void UpdateCategory(Category category) => CategoryDAO.UpdateCategory(category);
+    public Category GetCategoryById(int id) => CategoryDAO.GetCategoryNameById(id);
 }

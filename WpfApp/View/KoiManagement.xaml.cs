@@ -184,5 +184,41 @@ namespace WpfApp.View
             cboCategory.SelectedValue = koiFish.CategoryId;
 
         }
+
+        private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtPlaceholder.Visibility = Visibility.Collapsed;
+        }
+
+        private void txtSearch_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearch.Text))
+            {
+                txtPlaceholder.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string name = txtSearch.Text.Trim();
+            if (!string.IsNullOrEmpty(name))
+            {
+                List<KoiFish> customers = _koiFishService.FindByName(name);
+
+                if (customers.Any())
+                {
+                    dgData.ItemsSource = customers;
+                }
+                else
+                {
+                    MessageBox.Show("No koi found.", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter koi name to search.", "Notification", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
     }
 }

@@ -39,4 +39,10 @@ public class CategoryDAO
         db.Entry<Category>(category).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         db.SaveChanges();
     }
+
+    public static Category GetCategoryNameById(int id)
+    {
+        using var db = new KoiFishContext();
+        return db.Categories.SingleOrDefault(c => c.CategoryId == id);
+    }
 }

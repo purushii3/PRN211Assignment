@@ -61,7 +61,7 @@ namespace WpfApp
             this.Close();
         }
 
-        private void BtnHome_OnClick(object sender, RoutedEventArgs e)
+        private void btnHome_OnClick(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
         }

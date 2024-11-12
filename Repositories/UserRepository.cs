@@ -18,5 +18,7 @@ namespace Repositories
 
 
         public void UpdateCustomer(User user) => UserDAO.UpdateCustomer(user);
+
+        public List<User> SearchByName(string fullName) => UserDAO.SearchByName(fullName);
     }
 }

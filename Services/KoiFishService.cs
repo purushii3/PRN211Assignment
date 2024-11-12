@@ -61,9 +61,14 @@ namespace Services
             return iKoiFishRepository.SortedAsc();
         }
 
-        public List<KoiFish> FindByCategory(int categoryId)
+        public List<KoiFish> FindByCategory(string categoryName)
         {
-            return iKoiFishRepository.FindByCategory(categoryId);
+            return iKoiFishRepository.FindByName(categoryName);
+        }
+
+        public List<KoiFish> FindByName(string name)
+        {
+            return iKoiFishRepository.FindByName(name);
         }
     }
 }

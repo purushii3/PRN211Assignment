@@ -18,5 +18,7 @@ public class CategoryService : ICategoryService
 
     public List<Category> GetCategories() => _categoryRepository.GetCategories();
 
-    public void UpdateCategories(Category category) => _categoryRepository.UpdateCategory(category);    
+    public void UpdateCategories(Category category) => _categoryRepository.UpdateCategory(category);
+    public Category GetCategoryById(int id) => _categoryRepository.GetCategoryById(id);
+
 }

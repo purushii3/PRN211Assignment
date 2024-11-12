@@ -95,5 +95,11 @@ namespace DataAccessLayer
             }
         }
 
+        public static List<User> SearchByName(string fullName)
+        {
+            using var _db = new KoiFishContext();
+            return _db.Users.Where(x => x.FullName.Contains(fullName)).ToList();
+        }
+
     }
 }
