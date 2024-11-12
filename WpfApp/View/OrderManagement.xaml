@@ -24,10 +24,10 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Order Id" Binding="{Binding OrderId}" Width="80" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Order Date" Binding="{Binding Date}" Width="100" />
-                <DataGridTextColumn Header="User Id" Binding="{Binding UserId}" Width="80"/>
-                <DataGridTextColumn Header="Service Id" Binding="{Binding ServiceId}" Width="80"/>
+                <DataGridTextColumn Header="Service Name" Binding="{Binding Service.serviceName}" Width="100"/>
                 <DataGridTextColumn Header="Total Money" Binding="{Binding TotalMoney}" Width="100"/>
-                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="160"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="60"/>
+                <DataGridTextColumn Header="User Name" Binding="{Binding users.userName}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

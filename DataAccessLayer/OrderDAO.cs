@@ -15,7 +15,7 @@ namespace DataAccessLayer
             try
             {
                 using var context = new KoiFishContext();
-                orderList = context.Orders.ToList();
+                orderList = context.Orders.Where(o => o.Status == true).ToList();
             }
             catch (Exception ex)
             {
@@ -84,8 +84,7 @@ namespace DataAccessLayer
                 var ord = context.Orders.SingleOrDefault(o => o.OrderId == order.OrderId);
                 if (ord != null)
                 {
-                    context.Orders.Remove(ord);
-                    context.SaveChanges();
+                    ord.Status = false;
                 }
             }
             catch (Exception ex)
