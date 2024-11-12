@@ -59,9 +59,29 @@ namespace WpfApp
             }
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        private void txtUser_GotFocus(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            txtPlaceholder.Visibility = Visibility.Collapsed;
+        }
+
+        private void txtUser_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtUser.Text))
+            {
+                txtPlaceholder.Visibility = Visibility.Visible;
+            }
+        }
+        private void txtPass_GotFocus(object sender, RoutedEventArgs e)
+        {          
+            txtPlaceholderP.Visibility = Visibility.Collapsed;
+        }
+
+        private void txtPass_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPass.Password))
+            {
+                txtPlaceholderP.Visibility = Visibility.Visible;
+            }
         }
     }
 }

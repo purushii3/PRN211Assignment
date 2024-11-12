@@ -11,83 +11,118 @@
         Background="Transparent"
         AllowsTransparency="True">
     <Grid>
-        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#0099FF" Offset="0"/>
-                    <GradientStop Color="#DA34AE" Offset="0.75"/>
-                    <GradientStop Color="#FF60B1E7" Offset="1"/>
-                    <GradientStop Color="#FF596FDD" Offset="0.309"/>
-                    <GradientStop Color="#FF8C57CA" Offset="0.484"/>
-                </LinearGradientBrush>
-            </Border.BorderBrush>
+        <Border CornerRadius="10"                    
+            BorderThickness="2">
             <Border.Background>
-                <ImageBrush ImageSource="Images/koifish.jpg"></ImageBrush>
+                <ImageBrush ImageSource="/Images/background.png"/>
             </Border.Background>
 
-            <Grid>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="82" VerticalAlignment="Top" Width="632">
-                    <TextBlock Text="LOGIN WINDOW" Foreground="White" FontSize="28" FontWeight="Medium" FontFamily="Montserrat" 
-                               Cursor="Hand" Margin="180,30,0,0" Width="377"/>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Margin="150,82,150,10">
-                    <TextBlock Text="Username"
-                           Foreground="DarkGray"
-                           FontSize="12"
-                           FontWeight="Medium"
-                           FontFamily="Montserrat"                             
-                           Margin="0,35,0,0"/>
-                    <TextBox x:Name="txtUser"
-                         FontSize="13"
-                         FontWeight="Medium"
-                         FontFamily="Montserrat"                            
-                         Foreground="White"
-                         CaretBrush="LightGray"
-                         BorderBrush="DarkGray"
-                         BorderThickness="0,0,0,2"
-                         Height="28"
-                         VerticalContentAlignment="Center"
-                         Margin="0,5,0,0">
-                        <TextBox.Background>
-                            <LinearGradientBrush></LinearGradientBrush>
-                        </TextBox.Background>
-                    </TextBox>
+            <Border Margin="155,60,155,60">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Login" 
+                   FontSize="50" 
+                   Foreground="White"
+                   FontFamily="Helvetica"
+                   HorizontalAlignment="Center" Margin="0,30,0,0"/>
 
-                    <TextBlock Text="Password"
-                           Foreground="DarkGray"
-                           FontSize="12"
-                           FontWeight="Medium"
-                           FontFamily="Montserrat"                             
-                           Margin="0,15,0,0"/>
-                    <PasswordBox x:Name="txtPass"
-                         FontSize="13"
-                         FontWeight="Medium"
-                         FontFamily="Montserrat"                            
-                         Foreground="White"
-                         CaretBrush="LightGray"
-                         BorderBrush="DarkGray"
-                         BorderThickness="0,0,0,2"
-                         Height="28"
-                         VerticalContentAlignment="Center"
-                         Margin="0,5,0,0">
-                        <PasswordBox.Background>
-                            <LinearGradientBrush></LinearGradientBrush>
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                    <Grid Width="480" Height="50" Margin="0,30,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txtUser" 
+     FontSize="20"
+     FontWeight="Medium"
+     FontFamily="Helvetica"                            
+     Height="45"
+     VerticalContentAlignment="Center"
+     Width="480"
+     Background="White"
+     HorizontalAlignment="Center"
+     GotFocus="txtUser_GotFocus"
+     LostFocus="txtUser_LostFocus">
+                            <TextBox.Style>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="TextBox">
+                                                <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="20">
+                                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+                        <TextBlock x:Name="txtPlaceholder" Text="Enter Email"
+        Foreground="#FF3A3A3A"
+        FontSize="20"
+        FontWeight="Medium"
+        FontFamily="Helvetica"
+        VerticalAlignment="Center"
+        Margin="10,0,0,0"
+        IsHitTestVisible="False"/>
+                        <Image Source="/Images/use.png" Margin="408,6,7,6" />
+                    </Grid>
 
-                    <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Center"
-                                Margin="0,50,0,0" Height="51" Width="500" RenderTransformOrigin="0.5,0.481">
+                    <Grid Width="480" Height="50" Margin="0,20,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <PasswordBox x:Name="txtPass"
+ FontSize="13"
+ FontWeight="Medium"
+ FontFamily="Montserrat"                            
+ Height="45"
+ VerticalContentAlignment="Center"
+ Background="White"
+ Width="480" Password=""
+ GotFocus="txtPass_GotFocus"
+ LostFocus="txtPass_LostFocus">
+                            <PasswordBox.Style>
+                                <Style TargetType="PasswordBox">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="PasswordBox">
+                                                <Border Background="{TemplateBinding Background}" 
+                BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}" 
+                CornerRadius="20">
+                                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </PasswordBox.Style>
+                        </PasswordBox>
+                        <TextBlock x:Name="txtPlaceholderP" Text="Enter Password"
+                            Foreground="#FF3A3A3A"
+                            FontSize="20"
+                            FontWeight="Medium"
+                            FontFamily="Helvetica"
+                            VerticalAlignment="Center"
+                            Margin="10,0,0,0"
+                            IsHitTestVisible="False"
+                            Visibility="Visible"/>
+                        <Image Source="/Images/pass.png" Margin="408,6,7,6"/>
+                    </Grid>
+
+                    <Grid Width="480" Height="40" Margin="0,40,0,0">
                         <Button x:Name="btnLogin"                          
-                                BorderThickness="0"
-                                Content="LOG IN"
-                                Foreground="White"
-                                FontSize="12"
-                                FontFamily="Montserrat"
-                                Cursor="Hand"
-                                Click="btnLogin_Click" Width="160" Height="44">
+                            Content="LOG IN"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Click="btnLogin_Click" Margin="0,0,276,0">
                             <Button.Style>
-                                <Style TargetType="{x:Type Button}">
+                                <Style TargetType="Button">
                                     <Setter Property="Background" Value="#0099FF"/>
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
@@ -97,69 +132,47 @@
                                 </Style>
                             </Button.Style>
                             <Button.Template>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
                         <Button x:Name="btnRegister"                          
-                                BorderThickness="0"
-                                Content="Register"
-                                Foreground="White"
-                                FontSize="12"
-                                FontFamily="Montserrat"
-                                Cursor="Hand"
-                                Click="btnRegister_Click" Width="515" Height="49">
+            Content="REGISTER"
+            Foreground="White"
+            FontSize="12"
+            FontFamily="Montserrat"
+            Cursor="Hand"       
+            Click="btnRegister_Click" Margin="276,0,0,0">
                             <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#0099FF"/>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="LightSeaGreen"/>
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#28AEED"/>
+                                            <Setter Property="Background" Value="SeaGreen"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
                             </Button.Style>
                             <Button.Template>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Width="150" Height="40" CornerRadius="20"
-                                            Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
-                    </StackPanel>
-                    <Button x:Name="btnCancel"                          
-                              BorderThickness="0"
-                              Content="CANCEL"
-                              Foreground="White"
-                              FontSize="12"
-                              FontFamily="Montserrat"
-                              Cursor="Hand"
-                              Click="btnCancel_Click" Width="196" Height="96">
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="Background" Value="LightSeaGreen"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="SeaGreen"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                    </Grid>
                 </StackPanel>
-            </Grid>
+            </Border>
         </Border>
     </Grid>
 </Window>
