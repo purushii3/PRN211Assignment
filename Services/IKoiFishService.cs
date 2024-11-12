@@ -16,6 +16,7 @@ namespace Services
         void SaveKoi(KoiFish koiFish);
         List<KoiFish> SortedDesc();
         List<KoiFish> SortedAsc();
-        List<KoiFish> FindByCategory(int categoryId);
+        List<KoiFish> FindByCategory(string categoryName);
+        List<KoiFish> FindByName(string name);
     }
 }

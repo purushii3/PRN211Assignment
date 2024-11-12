@@ -39,7 +39,8 @@ namespace Repositories
 
         public List<KoiFish> SortedDesc() =>KoiFishDAO.SortedDesc();
         public List<KoiFish> SortedAsc() =>KoiFishDAO.SortedAsc();
-        public List<KoiFish> FindByCategory(int CategoryId) => KoiFishDAO.FindByCategory(CategoryId);
+        public List<KoiFish> FindByCategory(string CategoryName) => KoiFishDAO.FindByCategory(CategoryName);
+        public List<KoiFish> FindByName(string name) => KoiFishDAO.SearchByKoiName(name);
         
     }
 }

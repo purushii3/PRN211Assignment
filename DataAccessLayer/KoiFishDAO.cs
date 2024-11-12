@@ -106,19 +106,19 @@ namespace DataAccessLayer
             var sortedKoiList = context.KoiFishes.Where(k => k.Status == true).OrderBy(k =>  k.KoiFishPrice).ToList();
             return sortedKoiList;
         }
-        //find by Category
-        public static List<KoiFish> FindByCategory(int CategoryId)
+        //Search by Koi name
+        public static List<KoiFish> SearchByKoiName(string name)
         {
-            try
-            {
+            using var db = new KoiFishContext();
+            var koiList = db.KoiFishes.Where(k => k.KoiFishName.Contains(name)).ToList();
+            return koiList;
+        }
+        //Search by Category
+        public static List<KoiFish> FindByCategory(string CategoryName)
+        {
                 using var context = new KoiFishContext();
-                var koiList = context.KoiFishes.Where(k => k.CategoryId == CategoryId).ToList();
-                return koiList;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Invalid Koi" +ex.Message);
-            }
+                var koiList = context.KoiFishes.Where(k => k.Category.CategoryName.Contains(CategoryName)).ToList();
+                return koiList;    
         }
     }
 }

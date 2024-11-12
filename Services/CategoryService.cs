@@ -11,9 +11,12 @@ public class CategoryService : ICategoryService
     {
         _categoryRepository = new CategoryRepository();
     }
-    
-    public List<Category> GetCategories()
-    {
-       return _categoryRepository.GetCategories();
-    }
+
+    public void CreateCategories(Category category) => _categoryRepository.AddCategory(category);
+
+    public void DeleteCategories(Category category) => _categoryRepository.DeleteCategory(category);
+
+    public List<Category> GetCategories() => _categoryRepository.GetCategories();
+
+    public void UpdateCategories(Category category) => _categoryRepository.UpdateCategory(category);    
 }
