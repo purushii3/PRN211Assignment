@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Resources\**" />
+    <Page Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
@@ -16,13 +23,6 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Resources\koifish.jpg" />
-    <Resource Include="Resources\koifish.jpg" />
-    <None Remove="Resources\ngon-nui-thieng-cua-nhat-ban.jpg" />
-    <Resource Include="Resources\ngon-nui-thieng-cua-nhat-ban.jpg" />
   </ItemGroup>
 
   <ItemGroup>
