@@ -35,9 +35,75 @@
 
         <!-- Form for adding or editing fish -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5" >
-            <Button Content="Add Koi" Width="100" Margin="5" Click="btnCreateKoi"/>
-            <Button Content="Update Koi" Width="100" Margin="5" Click="btnUpdateKoi"/>
-            <Button Content="Delete Koi" Width="100" Margin="5" Padding="5" Click="btnDeleteKoi"/>
+            <Button Content="Add Koi" Width="155" Margin="5" Click="btnCreateKoi">
+                <Button.Background>
+                    <SolidColorBrush Color="#0099FF" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button Content="Update Koi" Width="155" Margin="5" Click="btnUpdateKoi">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF1B7140" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button Content="Delete Koi" Width="155" Margin="5" Padding="5" Click="btnDeleteKoi">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFA2AA3D" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="5,394,5,0" Height="38" VerticalAlignment="Top">

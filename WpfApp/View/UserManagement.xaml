@@ -77,20 +77,83 @@
                 Margin="0,5,10,5">
 
             <Button Content="Create User"
-                    Width="100"
+                    Width="160"
                     Margin="5"
-                    Padding="5"
-                    Click="btnCreateUser"/>
+                    Click="btnCreateUser">
+                <Button.Background>
+                    <SolidColorBrush Color="#0099FF" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
             <Button Content="Update User"
-                    Width="100"
+                    Width="160"
                     Margin="5"
-                    Padding="5"
-                    Click="btnUpdateUser"/>
+                    Click="btnUpdateUser">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF1B7140" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
             <Button Content="Delete User"
-                    Width="100"
+                    Width="160"
                     Margin="5"
-                    Click="btnDeleteUser"
-                    />
+                    Click="btnDeleteUser">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFA2AA3D" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
 
         </StackPanel>
 

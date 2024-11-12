@@ -63,20 +63,86 @@
                 Margin="0,5,10,5">
 
             <Button Content="Create Order"
-                    Width="100"
+                    Width="155"
                     Margin="5"
                     Padding="5"
-                    Click="btnCreateOrder"/>
+                    Click="btnCreateOrder">
+                <Button.Background>
+                    <SolidColorBrush Color="#0099FF" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
             <Button Content="Update Order"
-                    Width="100"
+                    Width="155"
                     Margin="5"
                     Padding="5"
-                    Click="btnUpdateOrder"/>
+                    Click="btnUpdateOrder">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF1B7140" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
             <Button Content="Delete Order"
-                    Width="100"
+                    Width="155"
                     Margin="5"
                     Click="btnDeleteOrder"
-                    />
+                    >
+                <Button.Background>
+                    <SolidColorBrush Color="#FFA2AA3D" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                    To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
 
         </StackPanel>
 

@@ -17,7 +17,7 @@
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="402" Margin="1,32,0,0" VerticalAlignment="Top" Width="150" Background="#FF717578">
 
-            <Button x:Name="btnHome" Height="44" Width="145" Margin="0,30,0,0" Background="Transparent" BorderBrush="Transparent" Click="BtnHome_OnClick">
+            <Button x:Name="btnHome" Height="44" Width="145" Margin="0,30,0,0" Background="Transparent" BorderBrush="Transparent" Click="btnHome_OnClick">
                 <StackPanel Orientation="Horizontal" Height="44" Width="145">
                     <Image Source="/Images/home.png" Width="44" Height="40" Stretch="Uniform" VerticalAlignment="Center"/>
                     <TextBlock Text="Home" VerticalAlignment="Bottom" Margin="5,0,0,0" Foreground="White" FontSize="18" Width="95" FontWeight="DemiBold" />
@@ -44,7 +44,14 @@
                     <TextBlock Text="Order" VerticalAlignment="Bottom" Margin="5,0,0,0" Foreground="White" FontSize="18" Width="95" FontWeight="DemiBold" />
                 </StackPanel>
             </Button>
-            
+
+            <Button x:Name="btnLogOut" Height="44" Width="145" Margin="0,10,0,0" Background="Transparent" BorderBrush="Transparent" Click="btnLogOut_Click">
+                <StackPanel Orientation="Horizontal" Height="44" Width="145">
+                    <Image Source="/Images/logout.png" Width="44" Height="40" Stretch="Uniform" VerticalAlignment="Center"/>
+                    <TextBlock Text="Logout" VerticalAlignment="Bottom" Margin="5,0,0,0" Foreground="White" FontSize="18" Width="95" FontWeight="DemiBold" Height="29" />
+                </StackPanel>
+            </Button>
+
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="31" Margin="150,32,0,0" VerticalAlignment="Top" Width="1400">
             <StackPanel.Background>
