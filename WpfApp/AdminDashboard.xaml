@@ -3,7 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Admin Dashboard" Height="450" Width="1400">
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="1400" Background="#FF0099FF">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="1400">
+            <StackPanel.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FF0099FF" Offset="0"/>
+                    <GradientStop Color="#FF800080" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
             <TextBlock Height="29" Text="Admin Dashboard" Width="156" 
                    HorizontalAlignment="Left" Margin="0,4,0,0"
                    FontSize="18" FontWeight="Bold" Foreground="White"/>
@@ -68,10 +74,10 @@
        HorizontalAlignment="Left"
        FontSize="16" FontWeight="Bold" Foreground="Black"/>
         </StackPanel>
-        
+
         <ContentControl x:Name="ContentArea" HorizontalAlignment="Right" 
-                        Margin="0,70,-60,10" 
-                        VerticalAlignment="Top" Width="1300" Height="370" />
+                        Margin="0,70,-1,0" 
+                        VerticalAlignment="Top" Width="1241" Height="370" />
 
 
     </Grid>

@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:WpfApp.View"
              mc:Ignorable="d"
              Loaded="UserManagement_OnLoaded"
-             Height="450"
-        Width="910">
+             Height="370"
+        Width="1241">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

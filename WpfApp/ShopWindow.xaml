@@ -7,7 +7,18 @@
         mc:Ignorable="d"
         Title="ShopWindow" Height="450" Width="800">
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="20,27,20,27">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="800">
+            <StackPanel.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FF0099FF" Offset="0"/>
+                    <GradientStop Color="#FF800080" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="402" Margin="1,32,0,0" VerticalAlignment="Top" Width="99" Background="#FF717578">
+            
+        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="104,47,20,3">
             <WrapPanel x:Name="DataWrapPanel" Margin="0,0,0,0" Width="980">
                
             </WrapPanel>

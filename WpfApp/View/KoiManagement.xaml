@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp.View"
         mc:Ignorable="d"
         Loaded="KoiManagement_OnLoaded"
-        Height="500" Width="1310">
+        Height="370" Width="1241">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
