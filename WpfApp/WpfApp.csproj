@@ -40,4 +40,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Images\koifish.jpg" />
+    <Resource Include="Images\koifish.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

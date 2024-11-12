@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Border.BorderBrush>
             <Border.Background>
-                <ImageBrush ImageSource="Resources/koifish.jpg"></ImageBrush>
+                <ImageBrush ImageSource="Images/koifish.jpg"></ImageBrush>
             </Border.Background>
 
             <Grid>

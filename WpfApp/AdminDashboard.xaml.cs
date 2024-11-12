@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Services;
+using WpfApp.View;
 using MessageBox = System.Windows.MessageBox;
 
 namespace WpfApp
@@ -30,34 +31,54 @@ namespace WpfApp
             InitializeComponent();
             _userService = new UserServices();
             _adminName = adminName;
-            AdminName.Text = _adminName;
+            AdminName.Text = "Hello, " + adminName;
         }
 
-        private void CategoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (CategoryList.SelectedItem is ListBoxItem selectedItem)
-            {
-                switch (selectedItem.Content.ToString())
-                {
-                    case "Koi Management":
-                        ContentArea.Content = new View.KoiManagement();
-                        break;
-
-                    case "User Management":
-                        ContentArea.Content = new View.UserManagement();
-                        break;
-                    case "Order Management":
-                        ContentArea.Content = new View.OrderManagement();
-                        break;
-                }
-            }
-        }
+        // private void CategoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        // {
+        //     if (CategoryList.SelectedItem is ListBoxItem selectedItem)
+        //     {
+        //         switch (selectedItem.Content.ToString())
+        //         {
+        //             case "Koi Management":
+        //                 ContentArea.Content = new View.KoiManagement();
+        //                 break;
+        //
+        //             case "User Management":
+        //                 ContentArea.Content = new View.UserManagement();
+        //                 break;
+        //             case "Order Management":
+        //                 ContentArea.Content = new View.OrderManagement();
+        //                 break;
+        //         }
+        //     }
+        // }
 
         private void btnLogOut_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
             this.Close();
+        }
+
+        private void BtnHome_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new View.UserManagement();
+        }
+
+        private void btnKoi_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new View.KoiManagement();
+        }
+
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            ContentArea.Content = new View.OrderManagement();
         }
     }
 }

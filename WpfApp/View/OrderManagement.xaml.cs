@@ -94,7 +94,7 @@ public partial class OrderManagement : UserControl
         txtServiceId.Text = order.ServiceId.ToString();
         txtTotalMoney.Text = order.TotalMoney.ToString();
         rbStatusActive.IsChecked = order.Status;
-        rbStatusInactive.IsChecked = order.Status;
+        rbStatusInactive.IsChecked = !order.Status;
     }
 
     public void ResetInput()
