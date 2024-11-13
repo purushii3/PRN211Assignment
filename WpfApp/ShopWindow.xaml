@@ -18,14 +18,14 @@
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="402" Margin="1,32,0,0" VerticalAlignment="Top" Width="98" Background="#FF717578">
             <TextBlock Height="21" TextWrapping="Wrap" Text="0" Width="11" FontSize="18" Margin="42,0,0,0" />
-            <Button x:Name="btnSearch" Height="43" Width="46" 
+            <Button x:Name="btnShoppingCart" Height="43" Width="46" 
         Background="Transparent" BorderBrush="Transparent"
         HorizontalAlignment="Left" Click="btnSearch_Click" Margin="19,0,0,0" >
                 <StackPanel Orientation="Horizontal" Height="39" Width="146">
                     <Image Source="/Images/shoppingcart.png" Width="44" Height="40" Stretch="Uniform" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Content="Buy"
+            <Button x:Name="btnBuy" Content="Buy"
         Width="96" Height="40" 
         Click="Button_Click" Margin="0,20,0,0">
                 <Button.Background>

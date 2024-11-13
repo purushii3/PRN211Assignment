@@ -42,13 +42,16 @@
 
   <ItemGroup>
     <None Remove="Images\1.jpg" />
+    <None Remove="Images\10.jpg" />
     <None Remove="Images\2.jpg" />
     <None Remove="Images\3.jpg" />
     <None Remove="Images\4.jpg" />
     <None Remove="Images\5.jpg" />
     <None Remove="Images\6.jpg" />
     <None Remove="Images\7.jpg" />
+    <None Remove="Images\8.jpg" />
     <None Remove="Images\8.png" />
+    <None Remove="Images\9.jpg" />
     <None Remove="Images\9.png" />
     <None Remove="Images\background.png" />
     <None Remove="Images\birthday.png" />
@@ -61,11 +64,15 @@
     <None Remove="Images\pass.png" />
     <None Remove="Images\phone.png" />
     <None Remove="Images\search.png" />
+    <None Remove="Images\shoppingcart.png" />
     <None Remove="Images\use.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\10.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\2.jpg">
@@ -86,10 +93,10 @@
     <Resource Include="Images\7.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\8.png">
+    <Resource Include="Images\8.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\9.png">
+    <Resource Include="Images\9.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\background.png">
@@ -112,6 +119,7 @@
     <Resource Include="Images\pass.png" />
     <Resource Include="Images\phone.png" />
     <Resource Include="Images\search.png" />
+    <Resource Include="Images\shoppingcart.png" />
     <Resource Include="Images\use.png" />
   </ItemGroup>
 
