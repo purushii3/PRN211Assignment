@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:WpfApp"
              StartupUri="LoginWindow.xaml">
     <Application.Resources>
-        <!-- Button-->
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="Montserrat"/>
             <Setter Property="FontSize" Value="12"/>
@@ -14,16 +13,17 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="150" Height="40"
-        CornerRadius="20"
-        Background="{TemplateBinding Background}">
+                        <Border Width="{TemplateBinding Width}" 
+                            Height="{TemplateBinding Height}"
+                            CornerRadius="20"
+                            Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
-        HorizontalAlignment="Center"/>
+                                          HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        
     </Application.Resources>
+
 </Application>

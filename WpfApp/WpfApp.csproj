@@ -55,6 +55,7 @@
     <None Remove="Images\home.png" />
     <None Remove="Images\koifish.jpg" />
     <None Remove="Images\Logo.png" />
+    <None Remove="Images\logout.png" />
     <None Remove="Images\name.png" />
     <None Remove="Images\order.png" />
     <None Remove="Images\pass.png" />
@@ -64,19 +65,48 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\1.jpg" />
-    <Resource Include="Images\2.jpg" />
-    <Resource Include="Images\3.jpg" />
-    <Resource Include="Images\4.jpg" />
-    <Resource Include="Images\5.jpg" />
-    <Resource Include="Images\6.jpg" />
-    <Resource Include="Images\7.jpg" />
-    <Resource Include="Images\8.png" />
-    <Resource Include="Images\9.png" />
-    <Resource Include="Images\background.png" />
-    <Resource Include="Images\birthday.png" />
-    <Resource Include="Images\home.png" />
-    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\6.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\background.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\birthday.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\home.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Logo.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\logout.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\name.png" />
     <Resource Include="Images\order.png" />
     <Resource Include="Images\pass.png" />

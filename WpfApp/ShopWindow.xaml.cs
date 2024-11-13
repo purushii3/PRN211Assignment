@@ -86,17 +86,18 @@ namespace WpfApp
                     Margin = new Thickness(10)
                 };
 
-                //if (!string.IsNullOrEmpty(koi.KoiFishImage))
-                //{
-                //    Image koiImage = new Image
-                //    {
-                //        Source = new BitmapImage(new Uri(koi.KoiFishImage)),
-                //        Width = 100,
-                //        Height = 150,
-                //        Margin = new Thickness(5)
-                //    };
-                //    koiPanel.Children.Add(koiImage);
-                //}
+                if (!string.IsNullOrEmpty(koi.KoiFishImage))
+                {
+                    string imagePath = koi.KoiFishImage;
+                    Image koiImage = new Image
+                    {
+                        Source = new BitmapImage(new Uri(imagePath, UriKind.Relative)),
+                        Width = 100,
+                        Height = 150,
+                        Margin = new Thickness(5)
+                    };
+                    koiPanel.Children.Add(koiImage);
+                }
 
                 koiPanel.Children.Add(new TextBlock { Text = $"ID: {koi.KoiFishId}", Margin = new Thickness(5), FontWeight = FontWeights.Bold });
                 koiPanel.Children.Add(new TextBlock { Text = $"Name: {koi.KoiFishName}", Margin = new Thickness(5), FontWeight = FontWeights.Bold });
