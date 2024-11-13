@@ -6,75 +6,77 @@
              xmlns:local="clr-namespace:WpfApp.View"
              mc:Ignorable="d"
              Loaded="UserManagement_OnLoaded"
-             Height="370"
-        Width="1241">
+             Height="450"
+             Width="1241">
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <!-- User DataGrid -->
         <DataGrid x:Name="dgData"
-                Grid.Row="0"
-                AutoGenerateColumns="False"
-                IsReadOnly="False"
-                SelectionChanged="UserDataGrid_OnSelectionChanged">
+                  Grid.Row="0"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="False"
+                  SelectionChanged="UserDataGrid_OnSelectionChanged"
+                  CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="userID" Binding="{Binding UserId}" Width="60" IsReadOnly="True"/>
+                <DataGridTextColumn Header="userID" Binding="{Binding UserId}" Width="60" IsReadOnly="True" />
                 <DataGridTextColumn Header="username" Binding="{Binding UserName}" Width="70" />
-                <DataGridTextColumn Header="fullName" Binding="{Binding FullName}" Width="150"/>
-                <DataGridTextColumn Header="password" Binding="{Binding Password}" Width="120"/>
-                <DataGridTextColumn Header="roleId" Binding="{Binding RoleId}" Width="50"/>
-                <DataGridTextColumn Header="birthDate" Binding="{Binding Birthday}" Width="100"/>
-                <DataGridTextColumn Header="address" Binding="{Binding Address}" Width="100"/>
-                <DataGridTextColumn Header="phone" Binding="{Binding Phone}" Width="120"/>
-                <DataGridTextColumn Header="status" Binding="{Binding Status}" Width="100"/>
+                <DataGridTextColumn Header="fullName" Binding="{Binding FullName}" Width="150" />
+                <DataGridTextColumn Header="password" Binding="{Binding Password}" Width="120" />
+                <DataGridTextColumn Header="roleId" Binding="{Binding RoleId}" Width="50" />
+                <DataGridTextColumn Header="birthDate" Binding="{Binding Birthday}" Width="100" />
+                <DataGridTextColumn Header="address" Binding="{Binding Address}" Width="100" />
+                <DataGridTextColumn Header="phone" Binding="{Binding Phone}" Width="120" />
+                <DataGridTextColumn Header="status" Binding="{Binding Status}" Width="100" />
             </DataGrid.Columns>
         </DataGrid>
 
         <!-- Form for adding or editing users -->
-        <StackPanel Orientation="Horizontal"
-                Margin="5,344,5,0"
-                Height="38"
-                VerticalAlignment="Top">
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    Height="38"
+                    VerticalAlignment="Top">
             <TextBox x:Name="txtUserId"
-                    Width="40"
-                    Margin="5"
-                    IsEnabled="False"/>
-            <TextBox x:Name="txtUserName" 
-                     Width="70"
+                     Width="40"
                      Margin="5"
-                     />
+                     IsEnabled="False" />
+            <TextBox x:Name="txtUserName"
+                     Width="70"
+                     Margin="5" />
             <TextBox x:Name="txtFullName"
-                    Width="140"
-                    Margin="5"/>
+                     Width="140"
+                     Margin="5" />
             <TextBox x:Name="txtPassword"
-                    Width="100"
-                    Margin="5"/>
+                     Width="100"
+                     Margin="5" />
             <TextBox x:Name="txtRoleId"
-                    Width="40"
-                    Margin="5"/>
+                     Width="40"
+                     Margin="5" />
             <TextBox x:Name="txtBirthDate"
-                    Width="70"
-                    Margin="5"/>
+                     Width="70"
+                     Margin="5" />
             <TextBox x:Name="txtAddress"
-                    Width="100"
-                    Margin="5"/>
+                     Width="100"
+                     Margin="5" />
             <TextBox x:Name="txtPhone"
-                    Width="100"
-                    Margin="5"/>
+                     Width="100"
+                     Margin="5" />
             <StackPanel Orientation="Horizontal" Margin="5" VerticalAlignment="Center">
-                <RadioButton x:Name="rbStatusActive" Content="Active" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
-                <RadioButton x:Name="rbStatusInactive" Content="Inactive" GroupName="StatusGroup" Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+                <RadioButton x:Name="rbStatusActive" Content="Active" GroupName="StatusGroup" Margin="5"
+                             IsChecked="{Binding IsActive, Mode=TwoWay}" />
+                <RadioButton x:Name="rbStatusInactive" Content="Inactive" GroupName="StatusGroup" Margin="5"
+                             IsChecked="{Binding IsActive, Mode=TwoWay}" />
             </StackPanel>
 
         </StackPanel>
         <!-- Add and Delete Buttons -->
 
-        <StackPanel Grid.Row="1"
-                Orientation="Horizontal"
-                Margin="0,5,10,5">
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="0,5,10,5">
 
             <Button Content="Create User"
                     Width="160"
@@ -88,7 +90,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                    To="#28AEED" Duration="0:0:0.2"/>
+                                                To="#28AEED" Duration="0:0:0.2" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -96,7 +98,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                    To="#0099FF" Duration="0:0:0.2"/>
+                                                To="#0099FF" Duration="0:0:0.2" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -114,7 +116,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                    To="#28AEED" Duration="0:0:0.2"/>
+                                                To="#28AEED" Duration="0:0:0.2" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -122,7 +124,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                    To="#0099FF" Duration="0:0:0.2"/>
+                                                To="#0099FF" Duration="0:0:0.2" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -140,7 +142,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                    To="#28AEED" Duration="0:0:0.2"/>
+                                                To="#28AEED" Duration="0:0:0.2" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -148,48 +150,49 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                    To="#0099FF" Duration="0:0:0.2"/>
+                                                To="#0099FF" Duration="0:0:0.2" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
             <StackPanel Height="44" Width="238" Margin="20,0,0,0" Orientation="Horizontal">
-                <Button x:Name="btnSearch" Height="46" Width="46" 
+                <Button x:Name="btnSearch" Height="46" Width="46"
                         Background="Transparent" BorderBrush="Transparent"
                         HorizontalAlignment="Left" Click="btnSearch_Click">
                     <StackPanel Orientation="Horizontal" Height="39" Width="151" RenderTransformOrigin="0.13,0.472">
-                        <Image Source="/Images/search.png" Width="44" Height="40" Stretch="Uniform" VerticalAlignment="Center"/>
+                        <Image Source="/Images/search.png" Width="44" Height="40" Stretch="Uniform"
+                               VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>
 
-                <Grid Width="196" Height="46" >
+                <Grid Width="196" Height="46">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="txtSearch" 
-FontSize="20"
-FontWeight="Medium"
-FontFamily="Helvetica"                            
-Height="40"
-VerticalContentAlignment="Center"
-Width="180"
-Background="Transparent"
-BorderBrush="White"
-HorizontalAlignment="Center"
-GotFocus="txtSearch_GotFocus"
-LostFocus="txtSearch_LostFocus" Margin="0,3,0,3">
+                    <TextBox x:Name="txtSearch"
+                             FontSize="20"
+                             FontWeight="Medium"
+                             FontFamily="Helvetica"
+                             Height="40"
+                             VerticalContentAlignment="Center"
+                             Width="180"
+                             Background="Transparent"
+                             BorderBrush="White"
+                             HorizontalAlignment="Center"
+                             GotFocus="txtSearch_GotFocus"
+                             LostFocus="txtSearch_LostFocus" Margin="0,3,0,3">
                         <TextBox.Style>
                             <Style TargetType="TextBox">
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="TextBox">
-                                            <Border Background="{TemplateBinding Background}" 
-                       BorderBrush="{TemplateBinding BorderBrush}" 
-                       BorderThickness="{TemplateBinding BorderThickness}" 
-                       CornerRadius="20">
-                                                <ScrollViewer x:Name="PART_ContentHost"/>
+                                            <Border Background="{TemplateBinding Background}"
+                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    CornerRadius="20">
+                                                <ScrollViewer x:Name="PART_ContentHost" />
                                             </Border>
                                         </ControlTemplate>
                                     </Setter.Value>
@@ -198,13 +201,13 @@ LostFocus="txtSearch_LostFocus" Margin="0,3,0,3">
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock x:Name="txtPlaceholder" Text="Enter name"
-            Foreground="White"
-            FontSize="15"
-            FontWeight="Medium"
-            FontFamily="Helvetica"
-            VerticalAlignment="Center"
-            Margin="10,0,8,0"
-            IsHitTestVisible="False"/>
+                               Foreground="White"
+                               FontSize="15"
+                               FontWeight="Medium"
+                               FontFamily="Helvetica"
+                               VerticalAlignment="Center"
+                               Margin="10,0,8,0"
+                               IsHitTestVisible="False" />
 
                 </Grid>
             </StackPanel>

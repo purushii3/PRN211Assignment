@@ -18,7 +18,7 @@ namespace DataAccessLayer
             {
                 using var context = new KoiFishContext();
                 koiList = context.KoiFishes
-                .Include(k => k.Category)
+                .Include("Category")
                 .Where(k => k.Status == true)
                 .ToList();
             }
