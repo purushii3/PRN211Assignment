@@ -6,9 +6,14 @@
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ShopWindow" Height="450" Width="800">
+        Title="ShopWindow" Height="450" Width="1200">
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="800">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="1200" Grid.Row="0">
             <StackPanel.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#FF0099FF" Offset="0"/>
@@ -16,46 +21,51 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="402" Margin="1,32,0,0" VerticalAlignment="Top" Width="98" Background="#FF717578">
-            <TextBlock Height="21" TextWrapping="Wrap" Text="0" Width="11" FontSize="18" Margin="42,0,0,0" />
+
+        <StackPanel HorizontalAlignment="Left" Height="1000" Margin="1,0,0,0" VerticalAlignment="Top" Width="98" Background="#FF717578" Grid.Row="1">
+            <TextBlock x:Name="CartItems" Height="21" TextWrapping="Wrap" Text="0" Width="11" FontSize="18" Margin="42,0,0,0" />
             <Button x:Name="btnShoppingCart" Height="43" Width="46" 
-        Background="Transparent" BorderBrush="Transparent"
-        HorizontalAlignment="Left" Click="btnSearch_Click" Margin="19,0,0,0" >
+                    Background="Transparent" BorderBrush="Transparent"
+                    HorizontalAlignment="Left" Click="btnShoppingClick" Margin="19,0,0,0">
                 <StackPanel Orientation="Horizontal" Height="39" Width="146">
                     <Image Source="/Images/shoppingcart.png" Width="44" Height="40" Stretch="Uniform" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnBuy" Content="Buy"
-        Width="96" Height="40" 
-        Click="Button_Click" Margin="0,20,0,0">
-                <Button.Background>
-                    <SolidColorBrush Color="#0099FF" />
-                </Button.Background>
-                <Button.Triggers>
-                    <EventTrigger RoutedEvent="MouseEnter">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                    To="#28AEED" Duration="0:0:0.2"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                    <EventTrigger RoutedEvent="MouseLeave">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                    To="#0099FF" Duration="0:0:0.2"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Button.Triggers>
-            </Button>
+            
+            <!-- <Button x:Name="btnBuy" Content="Buy" -->
+            <!--         Width="96" Height="40"  -->
+            <!--         Click="Button_Click" Margin="0,20,0,0"> -->
+            <!--     <Button.Background> -->
+            <!--         <SolidColorBrush Color="#0099FF" /> -->
+            <!--     </Button.Background> -->
+            <!--     <Button.Triggers> -->
+            <!--         <EventTrigger RoutedEvent="MouseEnter"> -->
+            <!--             <BeginStoryboard> -->
+            <!--                 <Storyboard> -->
+            <!--                     <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" -->
+            <!--                                     To="#28AEED" Duration="0:0:0.2"/> -->
+            <!--                 </Storyboard> -->
+            <!--             </BeginStoryboard> -->
+            <!--         </EventTrigger> -->
+            <!--         <EventTrigger RoutedEvent="MouseLeave"> -->
+            <!--             <BeginStoryboard> -->
+            <!--                 <Storyboard> -->
+            <!--                     <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" -->
+            <!--                                     To="#0099FF" Duration="0:0:0.2"/> -->
+            <!--                 </Storyboard> -->
+            <!--             </BeginStoryboard> -->
+            <!--         </EventTrigger> -->
+            <!--     </Button.Triggers> -->
+            <!-- </Button> -->
 
+            <Button x:Name="koiList" 
+                    Height="40" 
+                    Margin="5,20,5,0" 
+                    Content="Koi List" 
+                    Foreground="Black" 
+                    Click="koiList_Click"/>
         </StackPanel>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="104,47,20,3">
-            <WrapPanel x:Name="DataWrapPanel" Margin="0,0,0,0" Width="980">
 
-            </WrapPanel>
-        </ScrollViewer>
+        <ContentControl x:Name="ContentArea" Grid.Row="1" Margin="104,10,20,3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
     </Grid>
 </Window>

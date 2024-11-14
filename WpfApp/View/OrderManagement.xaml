@@ -11,7 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50" />
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <!-- User DataGrid -->
@@ -61,7 +61,7 @@
 
         <StackPanel Grid.Row="2"
                 Orientation="Horizontal"
-                Margin="0,5,10,5">
+                >
 
             <Button Content="Create Order"
                     Width="155"
