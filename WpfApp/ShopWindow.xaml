@@ -13,7 +13,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="1200" Grid.Row="0">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="1200" Grid.Row="0">
+            <Label x:Name="Login"
+                   Content="null"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"
+                   Foreground="Azure"/>
             <StackPanel.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#FF0099FF" Offset="0"/>
@@ -64,6 +70,13 @@
                     Content="Koi List" 
                     Foreground="Black" 
                     Click="koiList_Click"/>
+            
+            <Button x:Name="logOut" 
+                    Height="40" 
+                    Margin="5,20,5,0" 
+                    Content="Log Out" 
+                    Background="Orange"
+                    Click="logOut_Click"/>
         </StackPanel>
 
         <ContentControl x:Name="ContentArea" Grid.Row="1" Margin="104,10,20,3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>

@@ -49,7 +49,7 @@ namespace WpfApp
                 else if (user.RoleId.Equals("US"))
                 {
                     this.Hide();
-                    ShopWindow shopWindow = new ShopWindow();
+                    ShopWindow shopWindow = new ShopWindow(user.UserName);
                     shopWindow.Show();
                 }
                 else

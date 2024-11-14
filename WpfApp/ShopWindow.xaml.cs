@@ -22,9 +22,15 @@ namespace WpfApp
     /// </summary>
     public partial class ShopWindow : Window
     {
-        public ShopWindow()
+        private readonly UserServices _userServices;
+        private readonly string _userName;
+        public ShopWindow(string userName)
         {
             InitializeComponent();
+            _userServices = new UserServices();
+            _userName = userName;
+            Login.Content = $"Hello, {_userName}";
+            ContentArea.Content = new Shop.KoiList();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -66,6 +72,13 @@ namespace WpfApp
         {
             ContentArea.Content = new Shop.CheckOut();
         }
+        
+        private void logOut_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            this.Close();
+        }
 
         private void CloseButton(object sender, RoutedEventArgs e)
         {
@@ -79,7 +92,6 @@ namespace WpfApp
 
         }
 
-        
 
         
     }
