@@ -13,6 +13,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+<<<<<<< Updated upstream
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="1200" Grid.Row="0">
             <Label x:Name="Login"
                    Content="null"
@@ -20,6 +21,9 @@
                    VerticalAlignment="Center"
                    FontWeight="Bold"
                    Foreground="Azure"/>
+=======
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="32" VerticalAlignment="Center" Width="1999">
+>>>>>>> Stashed changes
             <StackPanel.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#FF0099FF" Offset="0"/>
@@ -37,7 +41,7 @@
                     <Image Source="/Images/shoppingcart.png" Width="44" Height="40" Stretch="Uniform" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            
+
             <!-- <Button x:Name="btnBuy" Content="Buy" -->
             <!--         Width="96" Height="40"  -->
             <!--         Click="Button_Click" Margin="0,20,0,0"> -->
