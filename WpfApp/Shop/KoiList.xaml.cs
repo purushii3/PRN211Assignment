@@ -77,7 +77,34 @@ namespace WpfApp.Shop
                 koiPanel.Children.Add(new TextBlock { Text = $"Category: {categoryName}", Margin = new Thickness(5) });
 
                 koiBorder.Child = koiPanel;
+                //button Add to card
+                Button buttonCard = new Button
+                {
+                    Content = "Add to card",
+                    //Background = Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#0099FF"),
+                    Margin = new Thickness(0, 20, 0, 0),
+                    Height = 30,
+                    Width = 100,
+                };
+                buttonCard.Click += (s, e) =>
+                {
 
+                };
+                koiPanel.Children.Add(buttonCard);
+                //button Buy
+                Button buttonBuy = new Button
+                {
+                    Content = "Buy",
+                    //Background = Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#0099FF"),
+                    Margin = new Thickness(0, 20, 0, 0),
+                    Height = 30,
+                    Width = 100,
+                };
+                buttonBuy.Click += (s, e) =>
+                {
+
+                };
+                koiPanel.Children.Add(buttonBuy);
                 //koiBorder.MouseDown += (s, e) =>
                 //{
                 //    if (detailWindow == null || !detailWindow.IsVisible)
