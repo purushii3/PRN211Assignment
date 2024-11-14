@@ -11,6 +11,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
@@ -25,12 +27,13 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Order Id" Binding="{Binding OrderId}" Width="80" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Order Date" Binding="{Binding Date}" Width="100" />
-                <DataGridTextColumn Header="Service Name" Binding="{Binding Service.serviceName}" Width="100"/>
                 <DataGridTextColumn Header="Total Money" Binding="{Binding TotalMoney}" Width="100"/>
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="60"/>
                 <DataGridTextColumn Header="User Name" Binding="{Binding users.userName}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
+        
+       
 
         <!-- Form for adding or editing users -->
         <StackPanel Grid.Row="1" Orientation="Horizontal"
@@ -58,11 +61,47 @@
                 </StackPanel>
         </StackPanel>
         <!-- Add and Delete Buttons -->
+        
+        <DataGrid x:Name="dgDetails"
+                  Grid.Row="2"
+                  AutoGenerateColumns="False"
+                  Margin="0 10 0 0"
+                  IsReadOnly="False"
+                  SelectionChanged="DgDetails_OnSelectionChanged"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Order Id" Binding="{Binding Order.OrderId}" Width="80" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Koi Fish Id" Binding="{Binding KoiFish.KoiFishId}" Width="100" />
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="100"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="60"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <StackPanel Grid.Row="3" Orientation="Horizontal"
+                    Height="38"
+                    VerticalAlignment="Top">
+            <TextBox x:Name="txtOrderID"
+                     Width="80"
+                     Margin="5"
+                     IsEnabled="False"/>
+            <TextBox x:Name="txtKoiFishId" 
+                     Width="90"
+                     Margin="5"/>
+            <TextBox x:Name="txtQuantity"
+                     Width="80"
+                     Margin="5"/>
+            <TextBox x:Name="txtPrice"
+                     Width="80"
+                     Margin="5"/>
+            <StackPanel Orientation="Vertical" Margin="1" VerticalAlignment="Center">
+                <RadioButton x:Name="rbStatusOn" Content="Active" GroupName="StatusGroup"  IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+                <RadioButton x:Name="rbStatusOff" Content="Inactive" GroupName="StatusGroup" IsChecked="{Binding IsActive, Mode=TwoWay}"/>
+            </StackPanel>
+        </StackPanel>
 
-        <StackPanel Grid.Row="2"
-                Orientation="Horizontal"
-                >
-
+        <StackPanel Grid.Row="4"
+                Orientation="Horizontal">
             <Button Content="Create Order"
                     Width="155"
                     Margin="5"

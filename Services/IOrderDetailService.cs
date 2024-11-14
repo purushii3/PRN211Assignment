@@ -8,5 +8,6 @@ namespace Services
 {
     public interface IOrderDetailService
     {
+        
     }
 }

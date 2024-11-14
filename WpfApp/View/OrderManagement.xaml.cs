@@ -10,6 +10,7 @@ public partial class OrderManagement : UserControl
 {
     private readonly IOrderService _orderService;
     private readonly IUserService _userService;
+    private readonly OrderDetailService _orderDetailService;
     
     
     public OrderManagement()
@@ -17,6 +18,7 @@ public partial class OrderManagement : UserControl
         InitializeComponent();
         _orderService = new OrderService();
         _userService = new UserServices();
+        _orderDetailService = new OrderDetailService();
     }
 
     public void LoadOrders()
@@ -81,6 +83,8 @@ public partial class OrderManagement : UserControl
 
     private void DgData_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        // order
+        
         DataGrid dataGrid = sender as DataGrid;
         DataGridRow row = (DataGridRow)dataGrid.ItemContainerGenerator
             .ContainerFromIndex(dataGrid.SelectedIndex);
@@ -95,6 +99,20 @@ public partial class OrderManagement : UserControl
         txtTotalMoney.Text = order.TotalMoney.ToString();
         rbStatusActive.IsChecked = order.Status;
         rbStatusInactive.IsChecked = !order.Status;
+        
+        // order detail
+
+        var orderDetail = _orderDetailService.GetOrderDetails(order.OrderId);
+        var detailList = orderDetail.FirstOrDefault();
+        
+        txtOrderID.Text = detailList.OrderId;
+        txtKoiFishId.Text = detailList.KoiFishId.ToString();
+        txtQuantity.Text = detailList.Quantity.ToString();
+        txtPrice.Text = detailList.Price.ToString();
+        
+        dgDetails.ItemsSource = orderDetail;
+        dgDetails.Items.Refresh();
+
     }
 
     public void ResetInput()
@@ -106,5 +124,20 @@ public partial class OrderManagement : UserControl
         txtTotalMoney.Text = "";
         rbStatusActive.IsChecked = false;
         rbStatusInactive.IsChecked = false;
+    }
+
+    private void DgDetails_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        try 
+        {
+            if (dgDetails.SelectedItems is OrderDetail detail)
+            {
+                txtOrderID.Text = detail.OrderId;
+                txtKoiFishId.Text = detail.KoiFishId.ToString();
+                txtQuantity.Text = detail.Quantity.ToString();
+                txtPrice.Text = detail.Price.ToString();
+            }
+        }
+        catch (Exception ex) { MessageBox.Show(ex.Message); }
     }
 }
