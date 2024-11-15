@@ -22,7 +22,14 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding KoiFishId}" Width="50" IsReadOnly="True" />
                 <DataGridTextColumn Header="KoiName" Binding="{Binding KoiFishName}" Width="100" />
-                <DataGridTextColumn Header="Image" Binding="{Binding KoiFishImage}" Width="200" />
+                <!-- <DataGridTextColumn Header="Image" Binding="{Binding KoiFishImage}" Width="200" /> -->
+                <DataGridTemplateColumn Header="Image" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding KoiFishImage}" Width="100" Height="100" Stretch="Uniform" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <!-- <DataGridTextColumn Header="Quantity" Binding="{Binding KoiFishQuantity}" Width="70" /> -->
                 <DataGridTextColumn Header="Price" Binding="{Binding KoiFishPrice}" Width="100" />
                 <DataGridTextColumn Header="Origin" Binding="{Binding Origin}" Width="70" />
@@ -168,7 +175,11 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Height="38" VerticalAlignment="Top">
             <TextBox x:Name="KoiId" Width="40" Margin="5" IsEnabled="False" />
             <TextBox x:Name="KoiName" Width="100" Margin="5" />
-            <TextBox x:Name="Image" Width="180" Margin="5" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="Image" Width="180" Margin="5" IsReadOnly="True" />
+                <Button Content="Browse" Width="75" Margin="5" Click="BrowseImage_Click" />
+            </StackPanel>
+            <!-- <TextBox x:Name="Image" Width="180" Margin="5" /> -->
             <!-- <TextBox x:Name="Quantity" Width="70" Margin="5" /> -->
             <TextBox x:Name="Price" Width="100" Margin="5" />
             <TextBox x:Name="Origin" Width="70" Margin="5" />

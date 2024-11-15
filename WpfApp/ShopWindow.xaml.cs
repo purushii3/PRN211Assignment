@@ -101,7 +101,7 @@ namespace WpfApp
 
         private void btnShoppingClick(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content = new Shop.CheckOut(orderDetails);
+            ContentArea.Content = new Shop.CheckOut(order, orderDetails);
         }
         
         private void logOut_Click(object sender, RoutedEventArgs e)

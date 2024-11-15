@@ -21,9 +21,29 @@ namespace WpfApp.Shop
     /// </summary>
     public partial class CheckOut : UserControl
     {
-        public CheckOut(List<OrderDetail> detailList)
+        private List<OrderDetail> _orderDetails;
+        private Order _order;
+        public CheckOut(Order order, List<OrderDetail> detailList)
         {
             InitializeComponent();
+            _orderDetails = detailList;
+            _order = order;
+        }
+
+
+        private void DgData_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnCheckout(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnDeleteOrder(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
