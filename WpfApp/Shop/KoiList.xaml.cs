@@ -98,7 +98,6 @@ namespace WpfApp.Shop
                 };
                 buttonCard.Click += (s, e) =>
                 {
-                    List<OrderDetail> detailList = new List<OrderDetail>();
                     OrderDetail orderDetail = new OrderDetail
                     {
                         KoiFishId = koi.KoiFishId,
@@ -107,10 +106,10 @@ namespace WpfApp.Shop
                         Price = koi.KoiFishPrice,
                         Status = true,
                     };
-                    detailList.Add(orderDetail);
-                    count++;
-                    
                     _shopWindow.UpdateCartItems(count);
+                    count++;
+
+                    _shopWindow.AddOrderDetail(orderDetail);
                     // orderService.CreateOrder(_order, detailList);
                     //_order.OrderDetails.Add(orderDetail);
                     MessageBox.Show("Add to card successully");

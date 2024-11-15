@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BusinessObjects.Models;
 
 namespace WpfApp.Shop
 {
@@ -20,7 +21,7 @@ namespace WpfApp.Shop
     /// </summary>
     public partial class CheckOut : UserControl
     {
-        public CheckOut()
+        public CheckOut(List<OrderDetail> detailList)
         {
             InitializeComponent();
         }

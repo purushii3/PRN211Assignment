@@ -28,6 +28,7 @@ namespace WpfApp
         private readonly OrderService _orderService;    
         private  Order order;
         private List<OrderDetail> orderDetails = new List<OrderDetail>();
+
         public ShopWindow(User user)
         {
             InitializeComponent();
@@ -91,10 +92,16 @@ namespace WpfApp
             int cartItems = Int32.Parse(CartItems.Text);
             ContentArea.Content = new Shop.KoiList(order, cartItems, this); 
         }
+        
+
+        public void AddOrderDetail(OrderDetail orderDetail)
+        {
+            orderDetails.Add(orderDetail);
+        }
 
         private void btnShoppingClick(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content = new Shop.CheckOut();
+            ContentArea.Content = new Shop.CheckOut(orderDetails);
         }
         
         private void logOut_Click(object sender, RoutedEventArgs e)
