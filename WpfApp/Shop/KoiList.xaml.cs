@@ -25,15 +25,19 @@ namespace WpfApp.Shop
         private readonly KoiFishService koiFishService;
         private readonly OrderDetailService orderDetailService;
         private readonly OrderService orderService;
+        private readonly ShopWindow _shopWindow;
         private Order _order;
-        public KoiList(Order order)
+        private int count;
+        public KoiList(Order order, int cartItems, ShopWindow shopWindow)
         {
             orderService = new OrderService();
             InitializeComponent();
             koiFishService = new KoiFishService();
             orderDetailService = new OrderDetailService();
             LoadKoiFish();
-            _order = order;
+            _order = order;            
+            count = cartItems;
+            _shopWindow = shopWindow;
         }
 
         private void LoadKoiFish()
@@ -104,6 +108,9 @@ namespace WpfApp.Shop
                         Status = true,
                     };
                     detailList.Add(orderDetail);
+                    count++;
+                    
+                    _shopWindow.UpdateCartItems(count);
                     // orderService.CreateOrder(_order, detailList);
                     //_order.OrderDetails.Add(orderDetail);
                     MessageBox.Show("Add to card successully");
@@ -121,7 +128,7 @@ namespace WpfApp.Shop
                 };
                 buttonBuy.Click += (s, e) =>
                 {
-
+                    
                 };
                 koiPanel.Children.Add(buttonBuy);
                 //koiBorder.MouseDown += (s, e) =>

@@ -39,6 +39,11 @@ namespace WpfApp
             service = new Service();
             this.user = user;
         }
+        
+        public void UpdateCartItems(int count)
+        {
+            CartItems.Text = count.ToString();
+        }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -82,8 +87,9 @@ namespace WpfApp
                 User = this.user,
                 Service = this.service,
                 UserId = user.UserId
-            };  
-            ContentArea.Content = new Shop.KoiList(order); 
+            };
+            int cartItems = Int32.Parse(CartItems.Text);
+            ContentArea.Content = new Shop.KoiList(order, cartItems, this); 
         }
 
         private void btnShoppingClick(object sender, RoutedEventArgs e)
