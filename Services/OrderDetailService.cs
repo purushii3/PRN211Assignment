@@ -10,7 +10,12 @@ namespace Services
 {
     public class OrderDetailService : IOrderDetailService
     {
-        private readonly OrderDetailRepository orderDetailRepository;
+        private readonly IOrderDetailRepository orderDetailRepository;
+
+        public OrderDetailService()
+        {
+            orderDetailRepository = new OrderDetailRepository();
+        }
         public void CreateOrderDetail(OrderDetail orderDetail) => orderDetailRepository.CreateOrderDetail(orderDetail);
 
         public void DeleteOrderDetail(OrderDetail orderDetail) => orderDetailRepository.DeleteOrderDetail(orderDetail);

@@ -10,11 +10,10 @@ namespace Repositories
 {
     public class OrderDetailRepository : IOrderDetailRepository
     {
-        public void CreateOrderDetail(OrderDetail orderDetail) => OrderDetailDAO.CreateOrderDetail(orderDetail);
-
-        public void DeleteOrderDetail(OrderDetail orderDetail) => OrderDetailDAO.DeleteOrderDetail(orderDetail);
-
         public List<OrderDetail> GetOrderDetails(string id) => OrderDetailDAO.GetAllOrderDetail(id);
+
+        public void CreateOrderDetail(OrderDetail orderDetail) => OrderDetailDAO.CreateOrderDetail(orderDetail);
+        public void DeleteOrderDetail(OrderDetail orderDetail) => OrderDetailDAO.DeleteOrderDetail(orderDetail);
         public void UpdateOrderDetail(OrderDetail orderDetail) => OrderDetailDAO.UpdateOrderDetail(orderDetail);
     }
 }

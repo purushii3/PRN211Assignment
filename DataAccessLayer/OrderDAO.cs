@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer
 {
@@ -15,7 +16,10 @@ namespace DataAccessLayer
             try
             {
                 using var context = new KoiFishContext();
-                orderList = context.Orders.Where(o => o.Status == true).ToList();
+                orderList = context.Orders
+                    .Include(o => o.User)
+                    .Where(o => o.Status == true)
+                    .ToList();
             }
             catch (Exception ex)
             {
@@ -85,6 +89,7 @@ namespace DataAccessLayer
                 if (ord != null)
                 {
                     ord.Status = false;
+                    context.SaveChanges();
                 }
             }
             catch (Exception ex)

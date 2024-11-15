@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfApp.View"
              mc:Ignorable="d"
              Loaded="OrderManagement_OnLoaded"
-             d:DesignHeight="370" d:DesignWidth="1241">
+             d:DesignHeight="500" d:DesignWidth="1241">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -21,15 +21,15 @@
                 Grid.Row="0"
                 AutoGenerateColumns="False"
                 Margin="0 10 0 0"
-                IsReadOnly="False"
+                IsReadOnly="True"
                 SelectionChanged="DgData_OnSelectionChanged"
                 CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Order Id" Binding="{Binding OrderId}" Width="80" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Order Date" Binding="{Binding Date}" Width="100" />
                 <DataGridTextColumn Header="Total Money" Binding="{Binding TotalMoney}" Width="100"/>
-                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="60"/>
-                <DataGridTextColumn Header="User Name" Binding="{Binding users.userName}" Width="*"/>
+                <DataGridTextColumn Header="User Name" Binding="{Binding User.UserName}" Width="100"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         
@@ -46,13 +46,10 @@
                 <TextBox x:Name="txtDate" 
                          Width="100"
                          Margin="5"/>
-                <TextBox x:Name="txtUserId"
-                         Width="80"
-                         Margin="5"/>
-                <TextBox x:Name="txtServiceId"
-                         Width="80"
-                         Margin="5"/>
                 <TextBox x:Name="txtTotalMoney"
+                         Width="80"
+                         Margin="5"/>
+                <ComboBox x:Name="cboUser"
                          Width="80"
                          Margin="5"/>
                 <StackPanel Orientation="Vertical" Margin="1" VerticalAlignment="Center">
@@ -65,8 +62,9 @@
         <DataGrid x:Name="dgDetails"
                   Grid.Row="2"
                   AutoGenerateColumns="False"
+                  SelectionMode="Single"
                   Margin="0 10 0 0"
-                  IsReadOnly="False"
+                  IsReadOnly="True"
                   SelectionChanged="DgDetails_OnSelectionChanged"
                   CanUserAddRows="False">
             <DataGrid.Columns>
@@ -81,11 +79,11 @@
         <StackPanel Grid.Row="3" Orientation="Horizontal"
                     Height="38"
                     VerticalAlignment="Top">
-            <TextBox x:Name="txtOrderID"
-                     Width="80"
-                     Margin="5"
-                     IsEnabled="False"/>
-            <TextBox x:Name="txtKoiFishId" 
+            <!-- <TextBox x:Name="txtOrderID" -->
+            <!--          Width="80" -->
+            <!--          Margin="5" -->
+            <!--          IsEnabled="False"/> -->
+            <ComboBox x:Name="cboKoi" 
                      Width="90"
                      Margin="5"/>
             <TextBox x:Name="txtQuantity"
@@ -102,60 +100,60 @@
 
         <StackPanel Grid.Row="4"
                 Orientation="Horizontal">
-            <Button Content="Create Order"
-                    Width="155"
-                    Margin="5"
-                    Padding="5"
-                    Click="btnCreateOrder">
-                <Button.Background>
-                    <SolidColorBrush Color="#0099FF" />
-                </Button.Background>
-                <Button.Triggers>
-                    <EventTrigger RoutedEvent="MouseEnter">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                    To="#28AEED" Duration="0:0:0.2"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                    <EventTrigger RoutedEvent="MouseLeave">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                    To="#0099FF" Duration="0:0:0.2"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Button.Triggers>
-            </Button>
-            <Button Content="Update Order"
-                    Width="155"
-                    Margin="5"
-                    Padding="5"
-                    Click="btnUpdateOrder">
-                <Button.Background>
-                    <SolidColorBrush Color="#FF1B7140" />
-                </Button.Background>
-                <Button.Triggers>
-                    <EventTrigger RoutedEvent="MouseEnter">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                    To="#28AEED" Duration="0:0:0.2"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                    <EventTrigger RoutedEvent="MouseLeave">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                    To="#0099FF" Duration="0:0:0.2"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Button.Triggers>
-            </Button>
+            <!-- <Button Content="Create Order" -->
+            <!--         Width="155" -->
+            <!--         Margin="5" -->
+            <!--         Padding="5" -->
+            <!--         Click="btnCreateOrder"> -->
+            <!--     <Button.Background> -->
+            <!--         <SolidColorBrush Color="#0099FF" /> -->
+            <!--     </Button.Background> -->
+            <!--     <Button.Triggers> -->
+            <!--         <EventTrigger RoutedEvent="MouseEnter"> -->
+            <!--             <BeginStoryboard> -->
+            <!--                 <Storyboard> -->
+            <!--                     <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" -->
+            <!--         To="#28AEED" Duration="0:0:0.2"/> -->
+            <!--                 </Storyboard> -->
+            <!--             </BeginStoryboard> -->
+            <!--         </EventTrigger> -->
+            <!--         <EventTrigger RoutedEvent="MouseLeave"> -->
+            <!--             <BeginStoryboard> -->
+            <!--                 <Storyboard> -->
+            <!--                     <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" -->
+            <!--         To="#0099FF" Duration="0:0:0.2"/> -->
+            <!--                 </Storyboard> -->
+            <!--             </BeginStoryboard> -->
+            <!--         </EventTrigger> -->
+            <!--     </Button.Triggers> -->
+            <!-- </Button> -->
+            <!-- <Button Content="Update Order" -->
+            <!--         Width="155" -->
+            <!--         Margin="5" -->
+            <!--         Padding="5" -->
+            <!--         Click="btnUpdateOrder"> -->
+            <!--     <Button.Background> -->
+            <!--         <SolidColorBrush Color="#FF1B7140" /> -->
+            <!--     </Button.Background> -->
+            <!--     <Button.Triggers> -->
+            <!--         <EventTrigger RoutedEvent="MouseEnter"> -->
+            <!--             <BeginStoryboard> -->
+            <!--                 <Storyboard> -->
+            <!--                     <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" -->
+            <!--         To="#28AEED" Duration="0:0:0.2"/> -->
+            <!--                 </Storyboard> -->
+            <!--             </BeginStoryboard> -->
+            <!--         </EventTrigger> -->
+            <!--         <EventTrigger RoutedEvent="MouseLeave"> -->
+            <!--             <BeginStoryboard> -->
+            <!--                 <Storyboard> -->
+            <!--                     <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" -->
+            <!--         To="#0099FF" Duration="0:0:0.2"/> -->
+            <!--                 </Storyboard> -->
+            <!--             </BeginStoryboard> -->
+            <!--         </EventTrigger> -->
+            <!--     </Button.Triggers> -->
+            <!-- </Button> -->
             <Button Content="Delete Order"
                     Width="155"
                     Margin="5"
@@ -178,6 +176,33 @@
                             <Storyboard>
                                 <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
                     To="#0099FF" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button Content="Delete Order Detail"
+                    Width="155"
+                    Margin="5"
+                    Padding="5"
+                    Click="btnDeleteOrderDetail">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF1B7140" />
+                </Button.Background>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                To="#28AEED" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                To="#0099FF" Duration="0:0:0.2"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>

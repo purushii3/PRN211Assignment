@@ -47,7 +47,7 @@ namespace WpfApp.View
                 dgData.ItemsSource = koiList;
                 dgData.Items.Refresh();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) {  }
             finally { ResetInput(); }
         }
 
@@ -59,7 +59,7 @@ namespace WpfApp.View
                 {
                     KoiFishName = KoiName.Text,
                     KoiFishImage = Image.Text,
-                    KoiFishQuantity = Int32.Parse(Quantity.Text),
+                    KoiFishQuantity = 1,
                     KoiFishPrice = Double.Parse(Price.Text),
                     Origin = Origin.Text,
                     HealthStatus = Int32.Parse(HealthStatus.Text),
@@ -88,7 +88,7 @@ namespace WpfApp.View
                         KoiFishId = Int32.Parse(KoiId.Text),
                         KoiFishName = KoiName.Text,
                         KoiFishImage = Image.Text,
-                        KoiFishQuantity = Int32.Parse(Quantity.Text),
+                        // KoiFishQuantity = Int32.Parse(Quantity.Text),
                         KoiFishPrice = Double.Parse(Price.Text),
                         Origin = Origin.Text,
                         HealthStatus = Int32.Parse(HealthStatus.Text),
@@ -117,7 +117,7 @@ namespace WpfApp.View
                         KoiFishId = Int32.Parse(KoiId.Text),
                         KoiFishName = KoiName.Text,
                         KoiFishImage = Image.Text,
-                        KoiFishQuantity = Int32.Parse(Quantity.Text),
+                        // KoiFishQuantity = Int32.Parse(Quantity.Text),
                         KoiFishPrice = Double.Parse(Price.Text),
                         Origin = Origin.Text,
                         HealthStatus = Int32.Parse(HealthStatus.Text),
@@ -146,7 +146,7 @@ namespace WpfApp.View
             KoiId.Text = " ";
             KoiName.Text = " ";
             Image.Text = " ";
-            Quantity.Text = " ";
+            // Quantity.Text = " ";
             Price.Text = " ";
             Origin.Text = " ";
             HealthStatus.Text = " ";
@@ -172,7 +172,7 @@ namespace WpfApp.View
             KoiId.Text = koiFish.KoiFishId.ToString();
             KoiName.Text = koiFish.KoiFishName;
             Image.Text = koiFish.KoiFishImage;
-            Quantity.Text = koiFish.KoiFishQuantity.ToString();
+            // Quantity.Text = koiFish.KoiFishQuantity.ToString();
             Price.Text = koiFish.KoiFishPrice.ToString();
             Origin.Text = koiFish.Origin;
             HealthStatus.Text = koiFish.HealthStatus.ToString();

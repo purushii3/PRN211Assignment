@@ -23,14 +23,21 @@ namespace WpfApp
     public partial class ShopWindow : Window
     {
         private readonly UserServices _userServices;
-        private readonly string _userName;
-        public ShopWindow(string userName)
+        private readonly User user;
+        private readonly Service service;
+        private readonly OrderService _orderService;    
+        private  Order order;
+        private List<OrderDetail> orderDetails = new List<OrderDetail>();
+        public ShopWindow(User user)
         {
             InitializeComponent();
             _userServices = new UserServices();
-            _userName = userName;
-            Login.Content = $"Hello, {_userName}";
-            ContentArea.Content = new Shop.KoiList();
+            Login.Content = $"Hello, {user.UserName}";
+            _orderService = new OrderService();
+           orderDetails = new List<OrderDetail>();
+            order = new Order();
+            service = new Service();
+            this.user = user;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -65,9 +72,20 @@ namespace WpfApp
 
         private void koiList_Click(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content = new Shop.KoiList();
+            order = new Order
+            {
+                OrderId = Guid.NewGuid().ToString(),
+                Date = DateOnly.FromDateTime(DateTime.Now),
+                ServiceId = 1,
+                TotalMoney = 0,
+                Status = true,
+                User = this.user,
+                Service = this.service,
+                UserId = user.UserId
+            };  
+            ContentArea.Content = new Shop.KoiList(order); 
         }
-        
+
         private void btnShoppingClick(object sender, RoutedEventArgs e)
         {
             ContentArea.Content = new Shop.CheckOut();

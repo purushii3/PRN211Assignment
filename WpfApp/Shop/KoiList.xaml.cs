@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using BusinessObjects.Models;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,21 +23,25 @@ namespace WpfApp.Shop
     public partial class KoiList : UserControl
     {
         private readonly KoiFishService koiFishService;
-
-
-        public KoiList()
+        private readonly OrderDetailService orderDetailService;
+        private readonly OrderService orderService;
+        private Order _order;
+        public KoiList(Order order)
         {
+            orderService = new OrderService();
             InitializeComponent();
             koiFishService = new KoiFishService();
+            orderDetailService = new OrderDetailService();
             LoadKoiFish();
+            _order = order;
         }
 
         private void LoadKoiFish()
         {
-
+            using var db = new KoiFishContext();
             var category = new CategoryService();
             var koiFishList = koiFishService.GetAllKoi();
-
+            //
             foreach (var koi in koiFishList)
             {
                 Border koiBorder = new Border
@@ -80,6 +85,7 @@ namespace WpfApp.Shop
                 //button Add to card
                 Button buttonCard = new Button
                 {
+                    
                     Content = "Add to card",
                     //Background = Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#0099FF"),
                     Margin = new Thickness(0, 20, 0, 0),
@@ -88,6 +94,19 @@ namespace WpfApp.Shop
                 };
                 buttonCard.Click += (s, e) =>
                 {
+                    List<OrderDetail> detailList = new List<OrderDetail>();
+                    OrderDetail orderDetail = new OrderDetail
+                    {
+                        KoiFishId = koi.KoiFishId,
+                        OrderId = _order.OrderId,
+                        Quantity = 1,
+                        Price = koi.KoiFishPrice,
+                        Status = true,
+                    };
+                    detailList.Add(orderDetail);
+                    // orderService.CreateOrder(_order, detailList);
+                    //_order.OrderDetails.Add(orderDetail);
+                    MessageBox.Show("Add to card successully");
 
                 };
                 koiPanel.Children.Add(buttonCard);
@@ -127,6 +146,8 @@ namespace WpfApp.Shop
 
                 DataWrapPanel.Children.Add(koiBorder);
             }
+            //sau khi chọn xong thì một order được tạo lưu các orderdetail
+            
         }
     }
 }

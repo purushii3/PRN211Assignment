@@ -23,7 +23,7 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding KoiFishId}" Width="50" IsReadOnly="True" />
                 <DataGridTextColumn Header="KoiName" Binding="{Binding KoiFishName}" Width="100" />
                 <DataGridTextColumn Header="Image" Binding="{Binding KoiFishImage}" Width="200" />
-                <DataGridTextColumn Header="Quantity" Binding="{Binding KoiFishQuantity}" Width="70" />
+                <!-- <DataGridTextColumn Header="Quantity" Binding="{Binding KoiFishQuantity}" Width="70" /> -->
                 <DataGridTextColumn Header="Price" Binding="{Binding KoiFishPrice}" Width="100" />
                 <DataGridTextColumn Header="Origin" Binding="{Binding Origin}" Width="70" />
                 <DataGridTextColumn Header="Health Status" Binding="{Binding HealthStatus}" Width="100" />
@@ -169,7 +169,7 @@
             <TextBox x:Name="KoiId" Width="40" Margin="5" IsEnabled="False" />
             <TextBox x:Name="KoiName" Width="100" Margin="5" />
             <TextBox x:Name="Image" Width="180" Margin="5" />
-            <TextBox x:Name="Quantity" Width="70" Margin="5" />
+            <!-- <TextBox x:Name="Quantity" Width="70" Margin="5" /> -->
             <TextBox x:Name="Price" Width="100" Margin="5" />
             <TextBox x:Name="Origin" Width="70" Margin="5" />
             <TextBox x:Name="HealthStatus" Width="100" Margin="5" />

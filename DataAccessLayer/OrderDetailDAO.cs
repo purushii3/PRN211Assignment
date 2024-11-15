@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer
 {
@@ -27,7 +28,12 @@ namespace DataAccessLayer
             try
             {
                 using var db = new KoiFishContext();
-                return db.OrderDetails.Where(o => o.OrderId.Equals(id)).ToList();
+                return db.OrderDetails
+                    .Include(o => o.Order)
+                    .Include(k => k.KoiFish)
+                    .Where(o => o.OrderId.Equals(id))
+                    .Where(o => o.Status == true)
+                    .ToList();
             }
             catch (Exception ex) 
             {
@@ -36,9 +42,22 @@ namespace DataAccessLayer
         }
         public static void DeleteOrderDetail(OrderDetail orderDetail)
         {
-            using var db = new KoiFishContext();
-            db.OrderDetails.Remove(orderDetail);
-            db.SaveChanges();
+            try
+            {
+                using var db = new KoiFishContext();
+                var detail = db.OrderDetails.SingleOrDefault(d => d.OrderId.Equals(orderDetail.OrderId) 
+                                                                  && d.KoiFishId == orderDetail.KoiFishId);
+                if (detail != null)
+                {
+                    detail.Status = false;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            
         }
     }
 }
