@@ -56,33 +56,17 @@ namespace WpfApp.View
         
         private void BrowseImage_Click(object sender, RoutedEventArgs e)
         {
-            // Get the full path to the Images directory
-            string imagesDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images");
-
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                InitialDirectory = imagesDirectory, // Set the initial directory to the Images folder
                 Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png|All files (*.*)|*.*"
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
-                // Get the full path of the selected file
-                string fullPath = openFileDialog.FileName;
-
-                // Ensure the selected file is within the Images directory
-                if (fullPath.StartsWith(imagesDirectory))
-                {
-                    // Store the relative path in the TextBox
-                    string relativePath = Path.GetRelativePath(imagesDirectory, fullPath);
-                    Image.Text = relativePath;
-                }
-                else
-                {
-                    MessageBox.Show("Please select an image from the Images directory.", "Invalid Selection", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                Image.Text = openFileDialog.FileName; // Set the file path to the TextBox
             }
         }
+        
         private void btnCreateKoi(object sender, RoutedEventArgs e)
         {
             try

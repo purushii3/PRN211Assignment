@@ -14,8 +14,7 @@ public partial class OrderDetail
     public double? Price { get; set; }
 
     public bool Status { get; set; }
-
-    public virtual KoiFish KoiFish { get; set; } = null!;
+    public virtual KoiFish? KoiFish { get; set; }
 
     public virtual Order Order { get; set; } = null!;
 }

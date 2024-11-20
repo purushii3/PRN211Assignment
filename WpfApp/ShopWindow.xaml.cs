@@ -25,7 +25,7 @@ namespace WpfApp
         private readonly UserServices _userServices;
         private readonly User user;
         private readonly Service service;
-        private readonly OrderService _orderService;    
+        private readonly OrderService _orderService;
         private  Order order;
         private List<OrderDetail> orderDetails = new List<OrderDetail>();
 
@@ -78,16 +78,15 @@ namespace WpfApp
 
         private void koiList_Click(object sender, RoutedEventArgs e)
         {
+            Random rnd = new Random();
             order = new Order
             {
                 OrderId = Guid.NewGuid().ToString(),
                 Date = DateOnly.FromDateTime(DateTime.Now),
+                UserId = user.UserId,
                 ServiceId = 1,
                 TotalMoney = 0,
                 Status = true,
-                User = this.user,
-                Service = this.service,
-                UserId = user.UserId
             };
             int cartItems = Int32.Parse(CartItems.Text);
             ContentArea.Content = new Shop.KoiList(order, cartItems, this); 
@@ -101,7 +100,7 @@ namespace WpfApp
 
         private void btnShoppingClick(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content = new Shop.CheckOut(order, orderDetails);
+            ContentArea.Content = new Shop.CheckOut(order, orderDetails, this);
         }
         
         private void logOut_Click(object sender, RoutedEventArgs e)

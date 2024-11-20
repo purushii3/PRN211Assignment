@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfApp.View"
              mc:Ignorable="d"
              Loaded="OrderManagement_OnLoaded"
-             d:DesignHeight="500" d:DesignWidth="1241">
+             d:DesignHeight="600" d:DesignWidth="1241">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

@@ -117,9 +117,9 @@ namespace WpfApp
             try
             {
                 User customer = new User();
-                List<User> users = _userService.GetAll();
-                int id = (users.Count > 0) ? users.Max(x => x.UserId) : 0;
-                customer.UserId = ++id;
+                // List<User> users = _userService.GetAll();
+                // int id = (users.Count > 0) ? users.Max(x => x.UserId) : 0;
+                // customer.UserId = ++id;
                 customer.FullName = txtFullname.Text;
                 customer.Phone = txtPhone.Text;
                 //email
@@ -130,7 +130,7 @@ namespace WpfApp
                 }
                 else
                 {
-                    MessageBox.Show("Email Address cannot be empty.");
+                    MessageBox.Show("Username cannot be empty.");
                     return;
                 }
                 //birthday
@@ -144,7 +144,7 @@ namespace WpfApp
                     MessageBox.Show("Please enter your date of birth in yyyy-MM-dd or dd/MM/yyyy format.");
                     return;
                 }
-                if(txtPass == txtPassC)
+                if(txtPass.Password == txtPassC.Password)
                 {
                     customer.Password = txtPass.Password;
                 }

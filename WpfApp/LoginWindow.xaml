@@ -58,7 +58,7 @@
                                 </Style>
                             </TextBox.Style>
                         </TextBox>
-                        <TextBlock x:Name="txtPlaceholder" Text="Enter Email"
+                        <TextBlock x:Name="txtPlaceholder" Text="Enter Username"
         Foreground="#FF3A3A3A"
         FontSize="20"
         FontWeight="Medium"
