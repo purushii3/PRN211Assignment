@@ -1,0 +1,175 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\view\\usermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\view\\usermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\shopwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\shopwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\shop\\koilist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\shop\\koilist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\registerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\registerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\admindashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\admindashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\shopwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\shopwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\shop\\koilist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\shop\\koilist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|d:\\fpt\\fa24\\prn212\\asm\\tu\\prn211assignment\\wpfapp\\shop\\checkout.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C4704877-605B-4EEB-BB37-D577211EE65B}|WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\shop\\checkout.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserManagement.xaml",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\View\\UserManagement.xaml",
+              "RelativeDocumentMoniker": "WpfApp\\View\\UserManagement.xaml",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\View\\UserManagement.xaml",
+              "RelativeToolTip": "WpfApp\\View\\UserManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-16T03:53:14.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegisterWindow.xaml.cs",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\RegisterWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\RegisterWindow.xaml.cs",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\RegisterWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp\\RegisterWindow.xaml.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAqwI4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T03:47:41.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminDashboard.xaml.cs",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\AdminDashboard.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\AdminDashboard.xaml.cs",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\AdminDashboard.xaml.cs",
+              "RelativeToolTip": "WpfApp\\AdminDashboard.xaml.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwDoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T07:40:55.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminDashboard.xaml",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\AdminDashboard.xaml",
+              "RelativeDocumentMoniker": "WpfApp\\AdminDashboard.xaml",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\AdminDashboard.xaml",
+              "RelativeToolTip": "WpfApp\\AdminDashboard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-14T07:27:47.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "KoiList.xaml",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\Shop\\KoiList.xaml",
+              "RelativeDocumentMoniker": "WpfApp\\Shop\\KoiList.xaml",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\Shop\\KoiList.xaml",
+              "RelativeToolTip": "WpfApp\\Shop\\KoiList.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-14T07:25:51.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShopWindow.xaml",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\ShopWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp\\ShopWindow.xaml",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\ShopWindow.xaml",
+              "RelativeToolTip": "WpfApp\\ShopWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-14T07:24:16.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KoiList.xaml.cs",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\Shop\\KoiList.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\Shop\\KoiList.xaml.cs",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\Shop\\KoiList.xaml.cs",
+              "RelativeToolTip": "WpfApp\\Shop\\KoiList.xaml.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAuwFEAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T07:38:48.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CheckOut.xaml",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\Shop\\CheckOut.xaml",
+              "RelativeDocumentMoniker": "WpfApp\\Shop\\CheckOut.xaml",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\Shop\\CheckOut.xaml",
+              "RelativeToolTip": "WpfApp\\Shop\\CheckOut.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-14T07:26:38.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp\\LoginWindow.xaml",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\LoginWindow.xaml",
+              "RelativeToolTip": "WpfApp\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-14T07:24:10.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ShopWindow.xaml.cs",
+              "DocumentMoniker": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\ShopWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\ShopWindow.xaml.cs",
+              "ToolTip": "D:\\fpt\\FA24\\PRN212\\ASM\\tu\\PRN211Assignment\\WpfApp\\ShopWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp\\ShopWindow.xaml.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAIAwwD0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T07:29:29.786Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
