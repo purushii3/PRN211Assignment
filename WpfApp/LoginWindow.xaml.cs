@@ -30,7 +30,7 @@ namespace WpfApp
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             RegisterWindow registerWindow = new RegisterWindow();
             registerWindow.Show();
         }

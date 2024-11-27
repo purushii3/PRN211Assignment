@@ -29,7 +29,7 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" Height="1000" Margin="1,0,0,0" VerticalAlignment="Top" Width="98" Background="#FF717578" Grid.Row="1">
-            <TextBlock x:Name="CartItems" Height="21" TextWrapping="Wrap" Text="0" Width="11" FontSize="18" Margin="42,0,0,0" />
+            <TextBlock x:Name="CartItems" Height="21" TextWrapping="Wrap" Text="0" Width="50" FontSize="18" Margin="42,0,0,0" />
             <Button x:Name="btnShoppingCart" Height="43" Width="46" 
                     Background="Transparent" BorderBrush="Transparent"
                     HorizontalAlignment="Left" Click="btnShoppingClick" Margin="19,0,0,0">

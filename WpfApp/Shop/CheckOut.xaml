@@ -5,15 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp.Shop"
              mc:Ignorable="d" 
+             Loaded="OrderDetailManagement_OnLoaded"
              d:DesignHeight="450" d:DesignWidth="800">
    <Grid Margin="10">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="50" />
-        <RowDefinition Height="50"/>
-    </Grid.RowDefinitions>
-
-    <!-- User DataGrid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <!-- User DataGrid -->
     <DataGrid x:Name="dgData"
         Grid.Row="0"
         AutoGenerateColumns="False"
@@ -40,7 +40,10 @@
         <TextBox x:Name="txtPrice"
                  Width="80"
                  Margin="5"/>
-    </StackPanel>
+        <TextBox x:Name="txtTotalPrice"
+         Width="100"
+         Margin="230,5,5,5"/>
+        </StackPanel>
 
     <StackPanel Grid.Row="2"
         Orientation="Horizontal">
@@ -72,10 +75,10 @@
             </Button.Triggers>
         </Button>
         <Button Content="Delete Order"
-            Width="155"
-            Margin="5"
-            Click="btnDeleteOrder"
-            >
+                Width="155"
+                Margin="5"
+                Click="btnDeleteOrder"
+        >
             <Button.Background>
                 <SolidColorBrush Color="#FFA2AA3D" />
             </Button.Background>

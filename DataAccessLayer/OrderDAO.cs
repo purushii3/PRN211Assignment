@@ -46,16 +46,12 @@ namespace DataAccessLayer
                 using var context = new KoiFishContext();
 
                 // Add the order
-                context.Orders.Add(order);
-                context.SaveChanges();
-
-                // Add each order detail with the newly created order ID
-                foreach (var detail in orderDetails)
+                foreach (OrderDetail orderDetail in orderDetails)
                 {
-                    detail.OrderId = order.OrderId; // Set the foreign key to the order ID
-                    context.OrderDetails.Add(detail);
+                    orderDetail.KoiFish = null;
                 }
-
+                order.OrderDetails = orderDetails;
+                context.Orders.Add(order);
                 context.SaveChanges();
             }
             catch (Exception ex)
