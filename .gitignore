@@ -369,3 +369,7 @@ WpfApp/appsettings.json
 WpfApp/MainWindow.xaml
 WpfApp/MainWindow.xaml.cs
 KoiFish.sln.DotSettings.user
+WpfApp/LoginWindow.xaml
+WpfApp/LoginWindow.xaml.cs
+WpfApp/RegisterWindow.xaml
+WpfApp/RegisterWindow.xaml.cs
